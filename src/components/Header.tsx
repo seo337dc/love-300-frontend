@@ -11,8 +11,7 @@ const Header = () => {
   return (
     <Wrap>
       <div className="flex items-center gap-[2px]">
-        <LogoImg src="/logo.png" alt="로고" />
-        <LogoText>UNIQUE ASSET</LogoText>
+        <LogoImg src="/white_3.png" alt="로고" />
       </div>
 
       <MenuContainer>
@@ -61,7 +60,7 @@ const Wrap = styled.div`
 `;
 
 const LogoImg = styled.img`
-  width: 1.1458vw;
+  width: auto;
   height: 0.9vw;
 
   @media screen and (max-width: 1024px) {
