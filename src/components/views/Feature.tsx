@@ -28,11 +28,9 @@ const Feature = () => {
       assessments, analysis methods, and related reports.`,
     },
     [Lang.KOR]: {
-      title: "RWA 프로젝트 검색 및 평가 정보 제공",
-      subTitle: "",
-      description: `Users can search for RWA projects of interest and check their
-      evaluation grades and detailed information, including project value
-      assessments, analysis methods, and related reports.`,
+      title: "RWA 프로젝트 ",
+      subTitle: "검색 및 평가 정보 제공",
+      description: `사용자는 관심 있는 RWA 프로젝트를 검색하고, 해당 프로젝트의 평가 등급과 상세 정보를 확인할 수 있습니다. 여기에는 프로젝트 가치 평가, 분석 방법, 관련 리포트 등이 포함됩니다.`,
     },
   };
 
@@ -48,11 +46,9 @@ const Feature = () => {
     assessments, analysis methods, and related reports.`,
     },
     [Lang.KOR]: {
-      title: "실시간 평가 업데이트 및 모니터링",
-      subTitle: "",
-      description: `Users can search for RWA projects of interest and check their
-    evaluation grades and detailed information, including project value
-    assessments, analysis methods, and related reports.`,
+      title: "실시간 평가 ",
+      subTitle: "업데이트 및 모니터링",
+      description: `평가된 RWA 프로젝트의 상태와 등급이 실시간으로 업데이트되며, 사용자는 이를 모니터링하여 최적의 투자 결정을 내릴 수 있습니다.`,
     },
   };
 
@@ -66,8 +62,8 @@ const Feature = () => {
       description: `Users receive customized analysis reports tailored to their investment preferences, along with investment recommendations based on these reports.`,
     },
     [Lang.KOR]: {
-      title: "플랫폼 주요 기능",
-      subTitle: "",
+      title: "맞춤형 투자 ",
+      subTitle: "분석 및 추천",
       description: `사용자는 자신의 투자 성향에 맞춰 맞춤형 분석 리포트를 제공받고, 이를 기반으로 한 투자 추천을 받을 수 있습니다.`,
     },
   };
@@ -91,46 +87,78 @@ const Feature = () => {
         <FeatureCard>
           <div className="flex gap-1">
             <span>1.</span>
-            <div>
-              <p>{objFeature1[lang].title}</p>
-              <FeatureSub>{objFeature1[lang].subTitle}</FeatureSub>
-            </div>
+
+            {lang === Lang.ENG ? (
+              <div>
+                <p>{objFeature1[lang].title}</p>
+                <FeatureSub>{objFeature1[lang].subTitle}</FeatureSub>
+              </div>
+            ) : (
+              <div className="flex">
+                <p>{objFeature1[lang].title}</p>
+                <FeatureSub className="ml-1">
+                  {objFeature1[lang].subTitle}
+                </FeatureSub>
+              </div>
+            )}
           </div>
 
           <FeatureImg src="/feature_rwa.png" alt="feature_rwa" />
           {objFeature1[lang].description && (
-            <FeatureDesc>{objFeature1[lang].description}</FeatureDesc>
+            <FeatureDesc className="mt-4">
+              {objFeature1[lang].description}
+            </FeatureDesc>
           )}
         </FeatureCard>
 
         <FeatureCard>
           <div className="flex gap-1">
             <span>2.</span>
-            <div>
-              <p>{objFeature2[lang].title}</p>
-              <FeatureSub>{objFeature2[lang].subTitle}</FeatureSub>
-            </div>
+            {lang === Lang.ENG ? (
+              <div>
+                <p>{objFeature2[lang].title}</p>
+                <FeatureSub>{objFeature1[lang].subTitle}</FeatureSub>
+              </div>
+            ) : (
+              <div className="flex">
+                <p>{objFeature2[lang].title}</p>
+                <FeatureSub className="ml-1">
+                  {objFeature1[lang].subTitle}
+                </FeatureSub>
+              </div>
+            )}
           </div>
 
           <FeatureImg src="/feature_monitoring.png" alt="feature_monitoring" />
           {objFeature1[lang].description && (
-            <FeatureDesc>{objFeature1[lang].description}</FeatureDesc>
+            <FeatureDesc className="mt-4">
+              {objFeature1[lang].description}
+            </FeatureDesc>
           )}
         </FeatureCard>
 
         <FeatureCard>
           <div className="flex gap-1">
             <span>3.</span>
-            <div>
-              <p>{objFeature3[lang].title}</p>
-              {objFeature3[lang].subTitle && (
+            {lang === Lang.ENG ? (
+              <div>
+                <p>{objFeature3[lang].title}</p>
                 <FeatureSub>{objFeature3[lang].subTitle}</FeatureSub>
-              )}
-            </div>
+              </div>
+            ) : (
+              <div className="flex">
+                <p>{objFeature3[lang].title}</p>{" "}
+                <FeatureSub className="ml-1">
+                  {objFeature3[lang].subTitle}
+                </FeatureSub>
+              </div>
+            )}
           </div>
 
           <FeatureImg src="/feature_custom.png" alt="feature_custom" />
-          <FeatureDesc>{objFeature1[lang].description}</FeatureDesc>
+          <FeatureDesc className="mt-4">
+            {objFeature1[lang].description}
+          </FeatureDesc>
         </FeatureCard>
       </div>
     </Wrap>
@@ -243,8 +271,14 @@ const FeatureCard = styled.div`
 `;
 
 const FeatureSub = styled.p`
-  font-size: 20px;
   color: #1855be;
+  font-family: "Pretendard Variable";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+  text-transform: capitalize;
 
   @media screen and (max-width: 1024px) {
     font-size: 17px;
