@@ -6,17 +6,19 @@ import "./globals.css";
 import StyledComponentsRegistry from "../lib/StyledComponentsRegistry";
 import GlobalStyleWrapper from "../lib/GlobalStyleWrapper"; // 클라이언트 컴포넌트로 분리
 
-export const metadata: Metadata = {
-  title: "Unique assets",
-  description: "RWA project evalution",
+export const metadata = {
+  metadataBase: new URL("https://uniqueasset.io"), // 배포시 반드시 필요한 설정
+
+  title: "Unique Assets",
+  description: "RWA Project Evaluation",
   openGraph: {
-    title: "RWA project evalution",
-    description: "RWA project evalution",
-    url: "https://uniqueasset.io/",
+    title: "RWA Project Evaluation",
+    description: "Explore Real World Assets",
+    url: "https://uniqueasset.io",
     images: [
       {
-        url: "/logo.png",
-        alt: "이미지 설명",
+        url: "/opengraph-logo.png", // 절대 URL을 사용하세요
+        alt: "Unique Asset Logo",
       },
     ],
   },
