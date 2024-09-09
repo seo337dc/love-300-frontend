@@ -9,14 +9,14 @@ type TLogos = {
   alt: string;
 };
 const paternsLogos: TLogos[] = [
-  { src: "partner_desert.png", alt: "partner_desert" },
-  { src: "partner_gate.png", alt: "partner_gate" },
-  { src: "partner_flow.png", alt: "partner_flow" },
-  { src: "partner_manna.png", alt: "partner_manna" },
-  { src: "partner_filecoin.png", alt: "partner_filecoin" },
-  { src: "partner_klaytn.png", alt: "partner_klaytn" },
-  { src: "patner_busan.png", alt: "patner_busan" },
-  { src: "partner_heesung.png", alt: "partner_heesung" },
+  // { src: "partner_desert.png", alt: "partner_desert" },
+  // { src: "partner_gate.png", alt: "partner_gate" },
+  // { src: "partner_flow.png", alt: "partner_flow" },
+  // { src: "partner_manna.png", alt: "partner_manna" },
+  // { src: "partner_filecoin.png", alt: "partner_filecoin" },
+  // { src: "partner_klaytn.png", alt: "partner_klaytn" },
+  // { src: "patner_busan.png", alt: "patner_busan" },
+  // { src: "partner_heesung.png", alt: "partner_heesung" },
 
   { src: "partner_avco.png", alt: "partner_avco" },
   { src: "partner_bon.png", alt: "partner_bon" },
@@ -75,6 +75,7 @@ const PartnerSection = () => {
       <LogoContainer>
         <AnimatedContainer>
           {paternsLogos
+            .concat(paternsLogos)
             .concat(paternsLogos)
             .concat(paternsLogos)
             .concat(paternsLogos)
@@ -207,7 +208,7 @@ const AnimatedContainer = styled.div`
   align-items: center;
   gap: 50px;
   animation: ${slideAnimation} 30s linear infinite;
-  width: calc(200px * 60); // 로고 개수에 따라 조정
+  width: calc(200px * 35); // 로고 개수에 따라 조정
 `;
 
 const LogoWrap = styled.div`
