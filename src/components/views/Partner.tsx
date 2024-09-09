@@ -17,6 +17,14 @@ const paternsLogos: TLogos[] = [
   { src: "partner_klaytn.png", alt: "partner_klaytn" },
   { src: "patner_busan.png", alt: "patner_busan" },
   { src: "partner_heesung.png", alt: "partner_heesung" },
+
+  { src: "partner_avco.png", alt: "partner_avco" },
+  { src: "partner_bon.png", alt: "partner_bon" },
+  { src: "partner_busan.png", alt: "partner_busan" },
+  { src: "partner_gsg.png", alt: "partner_gsg" },
+  { src: "partner_mongolia.png", alt: "partner_mongolia" },
+  { src: "partner_uni.png", alt: "partner_uni" },
+  { src: "dabsco_logo.png", alt: "dabsco_logo" },
 ];
 
 const PartnerSection = () => {
@@ -65,16 +73,18 @@ const PartnerSection = () => {
       </TextSection>
 
       <LogoContainer>
-        {paternsLogos
-          .concat(paternsLogos)
-          .concat(paternsLogos)
-          .concat(paternsLogos)
-          .concat(paternsLogos)
-          .map((logo, i) => (
-            <LogoWrap key={`${logo.src}_${i}`}>
-              <LogoImg src={logo.src} alt={logo.alt} />
-            </LogoWrap>
-          ))}
+        <AnimatedContainer>
+          {paternsLogos
+            .concat(paternsLogos)
+            .concat(paternsLogos)
+            .concat(paternsLogos)
+            .concat(paternsLogos)
+            .map((logo, i) => (
+              <LogoWrap key={`${logo.src}_${i}`}>
+                <LogoImg src={logo.src} alt={logo.alt} />
+              </LogoWrap>
+            ))}
+        </AnimatedContainer>
       </LogoContainer>
     </Wrap>
   );
@@ -156,11 +166,10 @@ const TextSub = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
-    width: 300px;
-    font-family: Inter;
-    font-size: 25px;
-    line-height: 32px; /* 128% */
-    letter-spacing: -1.32px;
+    .LogoWrap {
+      width: 100px; // 작은 화면에서 로고 너비 조정
+      height: 40px; // 작은 화면에서 로고 높이 조정
+    }
   }
 `;
 
@@ -170,32 +179,35 @@ const slideAnimation = keyframes`
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%); // 반복되는 로고의 너비에 따라 조절
+    transform: translateX(-50%); // 100% 이동하면, 로고가 반복됨
   }
 `;
 
 const LogoContainer = styled.div`
-  width: calc(200px * 20); // 각 로고의 너비 * 로고 개수
-  overflow: hidden;
+  width: 100%; // 컨테이너의 너비를 화면 폭에 맞춤
+  overflow: hidden; // 내부 애니메이션이 흘러넘치지 않게 함
   display: flex;
-  padding: 62px 36px;
   justify-content: center;
   align-items: center;
-  gap: 36px;
-  flex-shrink: 0;
+  gap: 50px;
   background: #f9f9f9;
-
-  // 애니메이션 적용
-  animation: ${slideAnimation} 30s linear infinite;
-
+  padding: 62px 36px;
   margin-top: 75px;
-
   @media screen and (max-width: 1024px) {
     margin-top: 56px;
     height: 80px;
     padding: 20px 10px;
     gap: 5px;
   }
+`;
+
+const AnimatedContainer = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+  animation: ${slideAnimation} 30s linear infinite;
+  width: calc(200px * 60); // 로고 개수에 따라 조정
 `;
 
 const LogoWrap = styled.div`
