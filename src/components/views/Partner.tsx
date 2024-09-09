@@ -24,7 +24,7 @@ const paternsLogos: TLogos[] = [
   { src: "partner_gsg.png", alt: "partner_gsg" },
   { src: "partner_mongolia.png", alt: "partner_mongolia" },
   { src: "partner_uni.png", alt: "partner_uni" },
-  { src: "dabsco_logo.png", alt: "dabsco_logo" },
+  { src: "partner_debsco.png", alt: "partner_debsco" },
 ];
 
 const PartnerSection = () => {
