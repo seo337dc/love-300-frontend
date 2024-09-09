@@ -33,8 +33,7 @@ const Footer = () => {
       <ConcatWrap>
         <MenuWrap>
           <LogoWrap>
-            <LogoImg src="/logo.png" alt="logo" />
-            <LogoTitle>UNIQUE ASSET</LogoTitle>
+            <LogoImg src="/white_2.png" alt="logo" />
           </LogoWrap>
 
           <MenuContainer>
@@ -232,7 +231,7 @@ const LogoWrap = styled.div`
 `;
 
 const LogoImg = styled.img`
-  width: 55px;
+  width: auto;
   height: 44px;
 `;
 
