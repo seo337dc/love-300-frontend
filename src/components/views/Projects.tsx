@@ -4,19 +4,18 @@ import { useState } from "react";
 import { styled } from "styled-components";
 import { useAtom } from "jotai";
 import { Lang, langAtom } from "@/store/langStore";
+import { Colors } from "@/common/constant";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 const ProjectsSection = () => {
   const [lang] = useAtom(langAtom);
   const [opens, setOpens] = useState({ att: false, accf: false, otn: false });
 
-  const downloadPDF = () => {
+  const downloadPDF = (isEng: boolean) => {
     const link = document.createElement("a");
     document.body.appendChild(link); // DOM에 link 요소를 추가
-    link.href =
-      lang === Lang.ENG
-        ? "/whitepaper/ACCF_eng.pdf"
-        : "/whitepaper/ACCF_kor.pdf";
-    link.download = lang === Lang.ENG ? "ACCF_eng.pdf" : "ACCF_kor.pdf";
+    link.href = isEng ? "/whitepaper/ACCF_eng.pdf" : "/whitepaper/ACCF_kor.pdf";
+    link.download = isEng ? "ACCF_eng.pdf" : "ACCF_kor.pdf";
     link.click();
     link.remove(); // 다운로드 후 link 요소를 제거
   };
@@ -36,6 +35,8 @@ const ProjectsSection = () => {
       description: `유니크 플랫폼에서 제공하는 주요 RWA 프로젝트 소개합니다.`,
     },
   };
+
+  console.log("opens", opens.accf);
 
   return (
     <Wrap>
@@ -63,7 +64,12 @@ const ProjectsSection = () => {
             <p className="projects_desc">tetris tower</p>
           </ContentTextWrap>
 
-          <IconSvg src="/plus_icon.png" alt="plus" rotate={opens.att} />
+          <IconSvg
+            src="/plus_icon.png"
+            alt="plus"
+            rotate={opens.att}
+            onClick={() => setOpens({ ...opens, att: !opens.att })}
+          />
         </ContentWrap>
 
         <ContentWrap $isCenter={true}>
@@ -78,8 +84,33 @@ const ProjectsSection = () => {
             src="/plus_icon.png"
             alt="plus"
             rotate={opens.accf}
-            onClick={downloadPDF}
+            onClick={() => setOpens({ ...opens, accf: !opens.accf })}
+            // onClick={downloadPDF}
           />
+
+          {opens.accf && (
+            <div className="flex flex-col gap-2">
+              <DownloadBtn onClick={() => downloadPDF(false)}>
+                <MdOutlineFileDownload size="0.8vw" />
+                <span>
+                  {lang === Lang.ENG
+                    ? "ACCF Project Whitepaper KOR"
+                    : "ACCF 프로젝트 국문 백서"}{" "}
+                  ver1.0
+                </span>
+              </DownloadBtn>
+              <DownloadBtn onClick={() => downloadPDF(true)}>
+                <MdOutlineFileDownload size="0.8vw" />
+                <span>
+                  {" "}
+                  {lang === Lang.ENG
+                    ? "ACCF Project Whitepaper ENG"
+                    : "ACCF 프로젝트 영문 백서"}{" "}
+                  ver1.0
+                </span>
+              </DownloadBtn>
+            </div>
+          )}
         </ContentWrap>
 
         <ContentWrap>
@@ -90,7 +121,12 @@ const ProjectsSection = () => {
             <p className="projects_desc">Christian Ontani</p>
           </ContentTextWrap>
 
-          <IconSvg src="/plus_icon.png" alt="plus" rotate={opens.otn} />
+          <IconSvg
+            src="/plus_icon.png"
+            alt="plus"
+            onClick={() => setOpens({ ...opens, otn: !opens.otn })}
+            rotate={opens.otn}
+          />
         </ContentWrap>
       </ContentsContainer>
     </Wrap>
@@ -219,7 +255,7 @@ const ContentsContainer = styled.div`
 `;
 
 const ContentWrap = styled.div<{ $isCenter?: boolean }>`
-  height: 25.98vw;
+  min-height: 25.98vw;
 
   display: flex;
   flex-direction: column;
@@ -236,7 +272,7 @@ const ContentWrap = styled.div<{ $isCenter?: boolean }>`
 
   @media screen and (max-width: 1024px) {
     padding-top: 23px;
-    height: 352px;
+    min-height: 352px;
     margin-top: 0;
   }
 `;
@@ -305,5 +341,41 @@ const IconSvg = styled.img<{ rotate: boolean }>`
   @media screen and (max-width: 1024px) {
     width: 44px;
     height: 44px;
+  }
+`;
+
+const DownloadBtn = styled.div`
+  border: 1px solid ${Colors.Neutral3};
+  background-size: cover;
+  cursor: pointer;
+  width: 12.435vw;
+  height: 1.615vw;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+
+  @media screen and (max-width: 1024px) {
+    min-width: 250px;
+    height: 20px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  span {
+    padding-top: 0.2vw;
+    font-family: Inter;
+    font-size: 0.633vw; // ; // 16px;
+    font-style: normal;
+
+    @media screen and (max-width: 1024px) {
+      padding-top: 2px;
+      font-size: 12px; // ; // 16px;
+    }
   }
 `;
