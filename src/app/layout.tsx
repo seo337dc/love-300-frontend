@@ -7,7 +7,7 @@ import StyledComponentsRegistry from "../lib/StyledComponentsRegistry";
 import GlobalStyleWrapper from "../lib/GlobalStyleWrapper"; // 클라이언트 컴포넌트로 분리
 
 export const metadata = {
-  metadataBase: new URL("https://uniqueasset.io"), // 배포시 반드시 필요한 설정
+  metadataBase: new URL("https://uniqueasset.io"),
 
   title: "Unique Assets",
   description: "RWA Project Evaluation",
@@ -17,7 +17,7 @@ export const metadata = {
     url: "https://uniqueasset.io",
     images: [
       {
-        url: "/blue_2.png", // 절대 URL을 사용하세요
+        url: new URL("/blue_2.png", "https://uniqueasset.io").toString(), // 절대 URL로 변경
         alt: "Unique Asset Logo",
       },
     ],
