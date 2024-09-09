@@ -9,6 +9,18 @@ const ProjectsSection = () => {
   const [lang] = useAtom(langAtom);
   const [opens, setOpens] = useState({ att: false, accf: false, otn: false });
 
+  const downloadPDF = () => {
+    const link = document.createElement("a");
+    document.body.appendChild(link); // DOM에 link 요소를 추가
+    link.href =
+      lang === Lang.ENG
+        ? "/whitepaper/ACCF_eng.pdf"
+        : "/whitepaper/ACCF_kor.pdf";
+    link.download = lang === Lang.ENG ? "ACCF_eng.pdf" : "ACCF_kor.pdf";
+    link.click();
+    link.remove(); // 다운로드 후 link 요소를 제거
+  };
+
   const obj: Record<
     Lang,
     Record<"title" | "subTitle" | "description", string>
@@ -43,7 +55,7 @@ const ProjectsSection = () => {
       </ProjectsContainer>
 
       <ContentsContainer>
-        <ContentWrap onClick={() => setOpens({ ...opens, att: !opens.att })}>
+        <ContentWrap>
           <TokenImg src="/projects_ATT.png" alt="projects_ATT" />
 
           <ContentTextWrap>
@@ -54,10 +66,7 @@ const ProjectsSection = () => {
           <IconSvg src="/plus_icon.png" alt="plus" rotate={opens.att} />
         </ContentWrap>
 
-        <ContentWrap
-          $isCenter={true}
-          onClick={() => setOpens({ ...opens, accf: !opens.accf })}
-        >
+        <ContentWrap $isCenter={true}>
           <TokenImg src="/projects_ACCF.png" alt="projects_ACCF" />
 
           <ContentTextWrap>
@@ -65,10 +74,15 @@ const ProjectsSection = () => {
             <p className="projects_desc">ASSET Chung Chun First</p>
           </ContentTextWrap>
 
-          <IconSvg src="/plus_icon.png" alt="plus" rotate={opens.accf} />
+          <IconSvg
+            src="/plus_icon.png"
+            alt="plus"
+            rotate={opens.accf}
+            onClick={downloadPDF}
+          />
         </ContentWrap>
 
-        <ContentWrap onClick={() => setOpens({ ...opens, otn: !opens.otn })}>
+        <ContentWrap>
           <TokenImg src="/projects_OTN.png" alt="projects_OTN" />
 
           <ContentTextWrap>
