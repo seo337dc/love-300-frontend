@@ -17,7 +17,7 @@ export const metadata = {
     url: "https://uniqueasset.io",
     images: [
       {
-        url: "/opengraph-logo.png", // 절대 URL을 사용하세요
+        url: "/opengraph-logo1.png", // 절대 URL을 사용하세요
         alt: "Unique Asset Logo",
       },
     ],
