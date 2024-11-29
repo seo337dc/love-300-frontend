@@ -1,0 +1,19 @@
+"use client";
+
+const LoadingPage = () => {
+  return (
+    <div className="fixed top-0 left-0 w-full h-full py-10 z-50 flex flex-col justify-between bg-white">
+      <div className="flex flex-col items-center">
+        <span
+          className="material-icons text-4xl"
+          style={{ fontSize: "0px" }} // 크기 조정
+        >
+          refresh
+        </span>
+        <p className="text-4xl">페이지 불러오는 중...</p>
+      </div>
+    </div>
+  );
+};
+
+export default LoadingPage;

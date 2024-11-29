@@ -47,6 +47,16 @@ server.get("/patients", (req, res) => {
   });
 });
 
+// 전체데이터 불러오는 controller
+server.get("/patients-all", (req, res) => {
+  let patients = router.db.get("patients").value();
+
+  res.json({
+    total: patients.length,
+    data: patients,
+  });
+});
+
 // 기본 라우터
 server.use(router);
 

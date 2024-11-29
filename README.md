@@ -7,10 +7,20 @@ https://aitrics.notion.site/Frontend-latest-74bac2856f5e459da0ac1fce942d38a3?pvs
 ## 과제 설명
 
 0. patient-db.json이 데이터베이스 역할을 함으로서 json-server로 서버 구성
+
    - status 다중 필터링을 걸기 위해 server.js를 생성하여 다중 쿼리 실행되도록 적용
-   - 서버 실행 : node sever.js
+   - 서버 실행 방법
+     - 1. npm run json-server [db 실행 - 한번만 실행]
+     - 2. json-server 종료 [node server.js이랑 겹쳐서 잘 못 호출하는 것으로 보임]
+     - 2. node sever.js [서버 실행]
+
 1. 아이콘 이미지 svg 파일을 적용하기 위해서 @svgr/webpack 설치하였습니다.
 2. 무한 스크롤 라이브러리 없이 IntersectionObserver으로 무한스크롤 구현하였습니다.
+
+## 구현 해야할 목록
+
+- 스타일컴포넌트로 로딩 컴포넌트 돌리기
+- zustand로 loading 상태 관리하기
 
 ## 목록
 
