@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+
 import Table from "@/component/common/Table";
-import { getPatients } from "@/lib/api";
-import { statusLabelMap, STATUS_LIST } from "@/util";
+import Loading from "@/component/common/Loading";
+
+import { getPatients, getPatientsAll } from "@/lib/api";
+import { outputStatusCtn, statusLabelMap, STATUS_LIST } from "@/util";
+
 import type { FilterStatus, Status, TPatient } from "@/types";
 
 const MainView = () => {
@@ -11,12 +16,42 @@ const MainView = () => {
   const observerRef = useRef<HTMLDivElement | null>(null);
 
   const [patients, setPatients] = useState<TPatient[]>([]);
+
   const [statusList, setStatusList] = useState<FilterStatus[]>(STATUS_LIST);
   const [page, setPage] = useState(1);
+
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchData = async (page: number, statuses: Status[]) => {
+  const { data: infoAll, refetch: fetchAll } = useQuery({
+    queryKey: ["/getPatientAll"],
+    queryFn: getPatientsAll,
+    initialData: null,
+  });
+
+  const handleStatus = (filterStatus: FilterStatus) => {
+    const resultStatus = statusList.map((status) => {
+      if (status.value === filterStatus.value) {
+        return { ...status, selected: !filterStatus.selected };
+      } else {
+        return status;
+      }
+    });
+
+    setStatusList(resultStatus);
+    const resquestStatus = resultStatus
+      .filter((status) => !!status.selected)
+      .map((status) => status.value);
+
+    fetchFilterData(resquestStatus).then(() => {
+      if (sectionRef.current) {
+        sectionRef.current.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  };
+
+  // 무한 스크롤 용 api 함수
+  const fetchInfinityData = async (page: number, statuses: Status[]) => {
     if (isLoading) return;
 
     try {
@@ -35,6 +70,37 @@ const MainView = () => {
     }
   };
 
+  const fetchFilterData = async (statuses: Status[]) => {
+    if (isLoading) return;
+
+    try {
+      setIsLoading(true);
+
+      const res = await getPatients({ _page: 1, statuses });
+
+      if (!!res) {
+        setPatients(res.data);
+        setHasMore(!!res.next); // next가 있으면 true, 없으면 false
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // 로딩 시 스크롤 방지
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    if (isLoading) {
+      sectionRef.current.style.overflow = "hidden";
+    } else {
+      sectionRef.current.style.overflow = "";
+    }
+  }, [isLoading]);
+
   // 무한 스크롤 처리
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,7 +112,7 @@ const MainView = () => {
       },
       {
         root: sectionRef.current || null,
-        rootMargin: "0px",
+        rootMargin: "0px", // 무한크롤 발생 위치 명확하게...
         threshold: 0.5,
       }
     );
@@ -71,45 +137,34 @@ const MainView = () => {
     const filterStatus = statusList
       .filter((status) => !!status.selected)
       .map((status) => status.value);
-    fetchData(page, filterStatus);
-  }, [page, statusList]);
-
-  const resultInfo = useMemo(() => {
-    const initObj = {
-      SCREENED: 0,
-      OBSERVING: 0,
-      DONE: 0,
-      ERROR: 0,
-      DNR: 0,
-    } as Record<FilterStatus["value"], number>;
-
-    const statusCounts = patients.reduce((acc, { status }) => {
-      acc[status] = (acc[status] || 0) + 1;
-      return acc;
-    }, initObj);
-
-    return statusCounts;
-  }, [patients]);
+    fetchInfinityData(page, filterStatus);
+  }, [page]);
 
   return (
     <div className="flex min-h-screen flex-col px-24 py-4">
       <section className="flex gap-4 p-4">
-        <span>전체 {patients.length}</span>
+        <span>전체 {infoAll?.totalCtn || 0}</span>
         <span>|</span>
 
         {statusList.map((status) => (
           <div key={status.value} className="flex items-center gap-1">
-            <span className="material-icons cursor-pointer">
+            <span
+              className="material-icons cursor-pointer"
+              onClick={() => handleStatus(status)}
+            >
               {status.selected ? "check_box" : "check_box_outline_blank"}
             </span>
             <span>{statusLabelMap[status.value]}</span>
-            <span>{resultInfo[status.value] || 0}</span>
+            <span>{infoAll && outputStatusCtn(status.value, infoAll)}</span>
           </div>
         ))}
       </section>
-      <section ref={sectionRef} className="w-full h-[90vh] overflow-y-auto">
+      <section
+        ref={sectionRef}
+        className="relative w-full h-[90vh] overflow-y-auto"
+      >
+        {isLoading && <Loading />}
         <Table list={patients} />
-        {isLoading && <div className="text-center py-4">로딩 중...</div>}
         <div ref={observerRef} className="h-10 bg-gray-200" /> {/* 관찰 대상 */}
       </section>
     </div>
