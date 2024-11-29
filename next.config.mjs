@@ -10,6 +10,7 @@ const nextConfig = {
     });
     return config;
   },
+  reactStrictMode: false, // Strict Mode 비활성화
 };
 
-export default nextConfig; // ES Module 형식으로 내보내기
+export default nextConfig;

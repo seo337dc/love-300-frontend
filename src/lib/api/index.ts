@@ -1,11 +1,30 @@
 import { api } from "@/lib/fetchService";
-import type { TPatient } from "@/types";
+import { toQueryString } from "../common";
+import type { PaginationResponse, TPatient } from "@/types";
 
-export async function getPatients(): Promise<TPatient[]> {
+export interface RequestModelPatients {
+  _page: number;
+  _size?: number;
+}
+
+export interface ResponseModelPaients extends PaginationResponse {
+  data: TPatient[];
+}
+
+export async function getPatients(
+  params: RequestModelPatients
+): Promise<ResponseModelPaients> {
   try {
-    const patients = await api.get<TPatient[]>("/patients");
-    console.log("Patients:", patients);
-    return patients; // TPatient[] 타입으로 반환
+    const { _page, _size = 10 } = params;
+    const queryParams = toQueryString({ _page, _size });
+
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    const response = await api.get<ResponseModelPaients>(
+      `/patients?${queryParams}`
+    );
+
+    return response;
   } catch (error: any) {
     if (error.type === "http") {
       console.error(`HTTP Error: ${error.status} - ${error.message}`);

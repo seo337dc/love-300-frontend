@@ -10,7 +10,7 @@ type TProps = {
 };
 const Table = ({ list }: TProps) => {
   return (
-    <div className="w-full">
+    <div>
       <table className="min-w-full divide-y divide-neutral3 border-b-neutral3 border-b-2">
         <thead className="bg-done_bg">
           <tr>
