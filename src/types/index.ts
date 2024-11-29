@@ -18,13 +18,7 @@ export type Alter = {
   date: string;
 };
 
-export enum Status {
-  SCREENED = "신규", // "SCREENED",
-  OBSERVING = "관찰중", // "OBSERVING",
-  DONE = "완료", //  "DONE",
-  ERROR = "오류", //  "ERROR",
-  DNR = "DNR", //  "DNR",
-}
+export type Status = "SCREENED" | "OBSERVING" | "DONE" | "DNR" | "ERROR";
 
 export type TLab = "DBP" | "PR" | "RR" | "BT" | "SBP";
 
@@ -33,3 +27,12 @@ export type FetchError = {
   status?: number;
   message: string;
 };
+
+export interface PaginationResponse {
+  first: number;
+  prev: number | null;
+  next: number | null;
+  last: number;
+  pages: number;
+  items: number;
+}
