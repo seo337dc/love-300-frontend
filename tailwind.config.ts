@@ -38,6 +38,10 @@ const config: Config = {
 
       dnr_bg: "#ecd4ff",
       dnr_text: "#9747ff",
+
+      netural2: "#8e8e8e",
+      neutral3: "#bebebe",
+      neutral4: "#e2e2e2",
     }),
   },
   plugins: [],
