@@ -9,7 +9,7 @@
       "location": "ICU 101호",
       "doctor": "장의사",
       "department": "신경외과",
-      "admission_dt": "2023-12-01",
+      "admission_dt": "2024-12-01 19:22:00",
       "alert": {
         "type": "DBP",
         "value": 120.0,
@@ -25,7 +25,7 @@
       "location": "ICU 102호",
       "doctor": "최의사",
       "department": "내과",
-      "admission_dt": "2023-12-02",
+      "admission_dt": "2024-12-02 19:22:00",
       "alert": {
         "type": "BT",
         "value": 38.5,
@@ -41,7 +41,7 @@
       "location": "ICU 103호",
       "doctor": "김의사",
       "department": "소아과",
-      "admission_dt": "2023-12-03",
+      "admission_dt": "2024-12-03 19:22:00",
       "alert": {
         "type": "SBP",
         "value": 140.0,
@@ -57,7 +57,7 @@
       "location": "ICU 104호",
       "doctor": "박의사",
       "department": "심장외과",
-      "admission_dt": "2023-12-04",
+      "admission_dt": "2024-12-04 19:22:00",
       "alert": {
         "type": "DBP",
         "value": 90.0,
@@ -73,7 +73,7 @@
       "location": "ICU 105호",
       "doctor": "이의사",
       "department": "신경외과",
-      "admission_dt": "2023-12-05",
+      "admission_dt": "2024-12-05 19:22:00",
       "alert": {
         "type": "BT",
         "value": 36.8,
@@ -89,7 +89,7 @@
       "location": "ICU 106호",
       "doctor": "김의사",
       "department": "내과",
-      "admission_dt": "2023-12-06",
+      "admission_dt": "2024-12-06 19:22:00",
       "alert": {
         "type": "DBP",
         "value": 100.0,
@@ -105,7 +105,7 @@
       "location": "ICU 107호",
       "doctor": "최의사",
       "department": "응급의학과",
-      "admission_dt": "2023-12-07",
+      "admission_dt": "2024-12-07 19:22:00",
       "alert": {
         "type": "SBP",
         "value": 150.0,
@@ -121,7 +121,7 @@
       "location": "ICU 108호",
       "doctor": "김의사",
       "department": "소아과",
-      "admission_dt": "2023-12-08",
+      "admission_dt": "2024-12-08 19:22:00",
       "alert": {
         "type": "BT",
         "value": 37.2,
@@ -137,7 +137,7 @@
       "location": "ICU 109호",
       "doctor": "장의사",
       "department": "신경외과",
-      "admission_dt": "2023-12-09",
+      "admission_dt": "2024-12-09 19:22:00",
       "alert": {
         "type": "DBP",
         "value": 115.0,
@@ -153,7 +153,7 @@
       "location": "ICU 110호",
       "doctor": "박의사",
       "department": "내과",
-      "admission_dt": "2023-12-10",
+      "admission_dt": "2024-12-10 19:22:00",
       "alert": {
         "type": "BT",
         "value": 36.5,
@@ -169,7 +169,7 @@
       "location": "ICU 111호",
       "doctor": "이의사",
       "department": "소아과",
-      "admission_dt": "2023-12-11",
+      "admission_dt": "2024-12-11 19:22:00",
       "alert": {
         "type": "SBP",
         "value": 125.0,
@@ -185,7 +185,7 @@
       "location": "ICU 112호",
       "doctor": "최의사",
       "department": "응급의학과",
-      "admission_dt": "2023-12-12",
+      "admission_dt": "2024-12-12 19:22:00",
       "alert": {
         "type": "DBP",
         "value": 110.0,
@@ -201,7 +201,7 @@
       "location": "ICU 113호",
       "doctor": "김의사",
       "department": "내과",
-      "admission_dt": "2023-12-13",
+      "admission_dt": "2024-12-13 19:22:00",
       "alert": {
         "type": "BT",
         "value": 37.8,
@@ -217,7 +217,7 @@
       "location": "ICU 114호",
       "doctor": "장의사",
       "department": "신경외과",
-      "admission_dt": "2023-12-14",
+      "admission_dt": "2024-12-14 19:22:00",
       "alert": {
         "type": "SBP",
         "value": 140.0,
@@ -233,11 +233,411 @@
       "location": "ICU 115호",
       "doctor": "박의사",
       "department": "심장외과",
-      "admission_dt": "2023-12-15",
+      "admission_dt": "2024-12-15 19:22:00",
       "alert": {
         "type": "DBP",
         "value": 95.0,
         "date": "12.15 17:10"
+      }
+    },
+    {
+      "emr_id": 10016,
+      "name": "환자16",
+      "status": "DONE",
+      "sex": "F",
+      "age": 52,
+      "location": "ICU 116호",
+      "doctor": "김의사",
+      "department": "내과",
+      "admission_dt": "2024-10-17 09:10:00",
+      "alert": {
+        "type": "BT",
+        "value": 102.5,
+        "date": "10.18 00:11"
+      }
+    },
+    {
+      "emr_id": 10017,
+      "name": "환자17",
+      "status": "OBSERVING",
+      "sex": "F",
+      "age": 42,
+      "location": "ICU 117호",
+      "doctor": "김의사",
+      "department": "소아과",
+      "admission_dt": "2024-10-18 13:36:00",
+      "alert": {
+        "type": "DBP",
+        "value": 132.1,
+        "date": "10.18 18:07"
+      }
+    },
+    {
+      "emr_id": 10018,
+      "name": "환자18",
+      "status": "OBSERVING",
+      "sex": "F",
+      "age": 48,
+      "location": "ICU 118호",
+      "doctor": "김의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-10-19 14:57:00",
+      "alert": {
+        "type": "SBP",
+        "value": 95.8,
+        "date": "10.20 05:49"
+      }
+    },
+    {
+      "emr_id": 10019,
+      "name": "환자19",
+      "status": "DNR",
+      "sex": "M",
+      "age": 41,
+      "location": "ICU 119호",
+      "doctor": "이의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-10-20 19:22:00",
+      "alert": {
+        "type": "BT",
+        "value": 85.2,
+        "date": "10.20 14:46"
+      }
+    },
+    {
+      "emr_id": 10020,
+      "name": "환자20",
+      "status": "DONE",
+      "sex": "M",
+      "age": 31,
+      "location": "ICU 120호",
+      "doctor": "최의사",
+      "department": "소아과",
+      "admission_dt": "2024-10-21 12:16:00",
+      "alert": {
+        "type": "DBP",
+        "value": 135.1,
+        "date": "10.22 06:09"
+      }
+    },
+    {
+      "emr_id": 10021,
+      "name": "환자21",
+      "status": "ERROR",
+      "sex": "M",
+      "age": 30,
+      "location": "ICU 121호",
+      "doctor": "장의사",
+      "department": "내과",
+      "admission_dt": "2024-10-22 16:21:00",
+      "alert": {
+        "type": "BT",
+        "value": 141.1,
+        "date": "10.22 09:37"
+      }
+    },
+    {
+      "emr_id": 10022,
+      "name": "환자22",
+      "status": "ERROR",
+      "sex": "M",
+      "age": 23,
+      "location": "ICU 122호",
+      "doctor": "박의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-10-24 04:12:00",
+      "alert": {
+        "type": "SBP",
+        "value": 91.9,
+        "date": "10.24 03:22"
+      }
+    },
+    {
+      "emr_id": 10023,
+      "name": "환자23",
+      "status": "SCREENED",
+      "sex": "M",
+      "age": 39,
+      "location": "ICU 123호",
+      "doctor": "박의사",
+      "department": "내과",
+      "admission_dt": "2024-10-24 09:52:00",
+      "alert": {
+        "type": "SBP",
+        "value": 124.7,
+        "date": "10.24 19:35"
+      }
+    },
+    {
+      "emr_id": 10024,
+      "name": "환자24",
+      "status": "DONE",
+      "sex": "M",
+      "age": 23,
+      "location": "ICU 124호",
+      "doctor": "박의사",
+      "department": "소아과",
+      "admission_dt": "2024-10-26 07:26:00",
+      "alert": {
+        "type": "SBP",
+        "value": 145.5,
+        "date": "10.26 00:15"
+      }
+    },
+    {
+      "emr_id": 10025,
+      "name": "환자25",
+      "status": "OBSERVING",
+      "sex": "F",
+      "age": 63,
+      "location": "ICU 125호",
+      "doctor": "김의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-10-26 19:25:00",
+      "alert": {
+        "type": "BT",
+        "value": 131.6,
+        "date": "10.27 00:59"
+      }
+    },
+    {
+      "emr_id": 10026,
+      "name": "환자26",
+      "status": "DONE",
+      "sex": "M",
+      "age": 61,
+      "location": "ICU 126호",
+      "doctor": "장의사",
+      "department": "신경외과",
+      "admission_dt": "2024-10-27 19:59:00",
+      "alert": {
+        "type": "SBP",
+        "value": 109.0,
+        "date": "10.28 01:42"
+      }
+    },
+    {
+      "emr_id": 10027,
+      "name": "환자27",
+      "status": "SCREENED",
+      "sex": "M",
+      "age": 44,
+      "location": "ICU 127호",
+      "doctor": "이의사",
+      "department": "심장외과",
+      "admission_dt": "2024-10-28 20:28:00",
+      "alert": {
+        "type": "BT",
+        "value": 141.1,
+        "date": "10.28 15:32"
+      }
+    },
+    {
+      "emr_id": 10028,
+      "name": "환자28",
+      "status": "DONE",
+      "sex": "M",
+      "age": 51,
+      "location": "ICU 128호",
+      "doctor": "최의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-10-30 06:47:00",
+      "alert": {
+        "type": "SBP",
+        "value": 93.4,
+        "date": "10.30 05:59"
+      }
+    },
+    {
+      "emr_id": 10029,
+      "name": "환자29",
+      "status": "ERROR",
+      "sex": "F",
+      "age": 25,
+      "location": "ICU 129호",
+      "doctor": "이의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-10-30 10:33:00",
+      "alert": {
+        "type": "SBP",
+        "value": 119.4,
+        "date": "10.31 00:14"
+      }
+    },
+    {
+      "emr_id": 10030,
+      "name": "환자30",
+      "status": "ERROR",
+      "sex": "M",
+      "age": 37,
+      "location": "ICU 130호",
+      "doctor": "장의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-11-01 06:43:00",
+      "alert": {
+        "type": "DBP",
+        "value": 107.2,
+        "date": "10.31 13:52"
+      }
+    },
+    {
+      "emr_id": 10031,
+      "name": "환자31",
+      "status": "DONE",
+      "sex": "F",
+      "age": 50,
+      "location": "ICU 131호",
+      "doctor": "박의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-11-01 17:01:00",
+      "alert": {
+        "type": "BT",
+        "value": 136.6,
+        "date": "11.01 19:39"
+      }
+    },
+    {
+      "emr_id": 10032,
+      "name": "환자32",
+      "status": "DNR",
+      "sex": "F",
+      "age": 30,
+      "location": "ICU 132호",
+      "doctor": "장의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-11-03 06:14:00",
+      "alert": {
+        "type": "DBP",
+        "value": 134.7,
+        "date": "11.02 08:24"
+      }
+    },
+    {
+      "emr_id": 10033,
+      "name": "환자33",
+      "status": "OBSERVING",
+      "sex": "F",
+      "age": 58,
+      "location": "ICU 133호",
+      "doctor": "장의사",
+      "department": "신경외과",
+      "admission_dt": "2024-11-03 13:19:00",
+      "alert": {
+        "type": "DBP",
+        "value": 135.4,
+        "date": "11.03 08:33"
+      }
+    },
+    {
+      "emr_id": 10034,
+      "name": "환자34",
+      "status": "DONE",
+      "sex": "M",
+      "age": 49,
+      "location": "ICU 134호",
+      "doctor": "이의사",
+      "department": "신경외과",
+      "admission_dt": "2024-11-05 03:59:00",
+      "alert": {
+        "type": "DBP",
+        "value": 102.5,
+        "date": "11.05 03:47"
+      }
+    },
+    {
+      "emr_id": 10035,
+      "name": "환자35",
+      "status": "OBSERVING",
+      "sex": "M",
+      "age": 56,
+      "location": "ICU 135호",
+      "doctor": "김의사",
+      "department": "내과",
+      "admission_dt": "2024-11-05 21:53:00",
+      "alert": {
+        "type": "DBP",
+        "value": 147.0,
+        "date": "11.06 04:42"
+      }
+    },
+    {
+      "emr_id": 10036,
+      "name": "환자36",
+      "status": "OBSERVING",
+      "sex": "M",
+      "age": 62,
+      "location": "ICU 136호",
+      "doctor": "김의사",
+      "department": "소아과",
+      "admission_dt": "2024-11-06 10:34:00",
+      "alert": {
+        "type": "DBP",
+        "value": 143.3,
+        "date": "11.06 16:47"
+      }
+    },
+    {
+      "emr_id": 10037,
+      "name": "환자37",
+      "status": "DNR",
+      "sex": "F",
+      "age": 72,
+      "location": "ICU 137호",
+      "doctor": "김의사",
+      "department": "소아과",
+      "admission_dt": "2024-11-07 14:39:00",
+      "alert": {
+        "type": "SBP",
+        "value": 144.3,
+        "date": "11.07 08:33"
+      }
+    },
+    {
+      "emr_id": 10038,
+      "name": "환자38",
+      "status": "SCREENED",
+      "sex": "F",
+      "age": 64,
+      "location": "ICU 138호",
+      "doctor": "장의사",
+      "department": "응급의학과",
+      "admission_dt": "2024-11-08 19:38:00",
+      "alert": {
+        "type": "SBP",
+        "value": 81.2,
+        "date": "11.08 09:07"
+      }
+    },
+    {
+      "emr_id": 10039,
+      "name": "환자39",
+      "status": "DONE",
+      "sex": "F",
+      "age": 40,
+      "location": "ICU 139호",
+      "doctor": "이의사",
+      "department": "신경외과",
+      "admission_dt": "2024-11-09 09:57:00",
+      "alert": {
+        "type": "SBP",
+        "value": 108.4,
+        "date": "11.10 02:04"
+      }
+    },
+    {
+      "emr_id": 10040,
+      "name": "환자40",
+      "status": "DNR",
+      "sex": "M",
+      "age": 79,
+      "location": "ICU 140호",
+      "doctor": "장의사",
+      "department": "내과",
+      "admission_dt": "2024-11-11 03:08:00",
+      "alert": {
+        "type": "DBP",
+        "value": 119.4,
+        "date": "11.10 17:13"
       }
     }
   ]
