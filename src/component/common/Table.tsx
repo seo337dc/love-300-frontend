@@ -1,6 +1,7 @@
 "use client";
 
 import Label from "./Label";
+import IconCopy from "@/assets/icon/icon-copy.svg";
 
 import type { TPatient } from "@/types";
 
@@ -9,39 +10,36 @@ type TProps = {
 };
 const Table = ({ list }: TProps) => {
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200 border border-gray-300">
-        <thead className="bg-gray-100">
+    <div className="w-full">
+      <table className="min-w-full divide-y divide-neutral3 border-b-neutral3 border-b-2">
+        <thead className="bg-done_bg">
           <tr>
-            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-600">
-              Status
-            </th>
-            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-600">
-              Paintent info
-            </th>
-            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-600"></th>
-            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-600"></th>
+            <th className="p-4 w-14">Status</th>
+            <th className="p-4 min-w-60">Paintent info</th>
+            <th className="p-4"></th>
+            <th className="p-4"></th>
           </tr>
         </thead>
         <tbody className="divide-y divide-grey200">
           {list.map((item) => (
             <tr key={item.emr_id}>
-              <td className="border border-grey200 px-4 py-2 text-sm text-grey100">
+              <td className="p-2">
                 <Label status={item.status} />
               </td>
-              <td className="border border-grey200 px-4 py-2 text-sm text-grey100">
+              <td className="p-2">
                 <p>
                   {item.name} ({item.sex}/{item.age})
                 </p>
-                <div>
-                  {item.emr_id} <div>아이콘</div>
+                <div className="flex justify-between">
+                  <span>{item.emr_id}</span>
+                  <IconCopy className="text-gray-500 cursor-pointer hover:text-gray-700" />
                 </div>
               </td>
-              <td className="border border-grey200 px-4 py-2 text-sm text-grey100">
+              <td className="p-2">
                 <p>{item.location}</p>
                 <p>{item.admission_dt}</p>
               </td>
-              <td className="border border-grey200 px-4 py-2 text-sm text-grey100">
+              <td className="p-2">
                 <p>{item.department}</p>
                 <p>{item.doctor}</p>
               </td>
