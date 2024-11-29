@@ -6,11 +6,11 @@ https://aitrics.notion.site/Frontend-latest-74bac2856f5e459da0ac1fce942d38a3?pvs
 
 ## 과제 설명
 
-0. patient-db.json이 데이터베이스 역할을 함
-   서버 실행 : json-server --watch patient-db.json --port 4000
-
-1. 아이콘 이미지 svg 파일을 적용하기 위해서 @svgr/webpack을 설치하여 next config를 세팅하였습니다.
-<!-- 이곳에 과제 설명을 작성해주세요 ! -->
+0. patient-db.json이 데이터베이스 역할을 함으로서 json-server로 서버 구성
+   - status 다중 필터링을 걸기 위해 server.js를 생성하여 다중 쿼리 실행되도록 적용
+   - 서버 실행 : node sever.js
+1. 아이콘 이미지 svg 파일을 적용하기 위해서 @svgr/webpack 설치하였습니다.
+2. 무한 스크롤 라이브러리 없이 IntersectionObserver으로 무한스크롤 구현하였습니다.
 
 ## 목록
 

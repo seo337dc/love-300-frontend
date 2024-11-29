@@ -1,10 +1,11 @@
 import { api } from "@/lib/fetchService";
 import { toQueryString } from "../common";
-import type { PaginationResponse, TPatient } from "@/types";
+import type { PaginationResponse, Status, TPatient } from "@/types";
 
 export interface RequestModelPatients {
   _page: number;
   _size?: number;
+  statuses: Status[];
 }
 
 export interface ResponseModelPaients extends PaginationResponse {
@@ -16,13 +17,29 @@ export async function getPatients(
 ): Promise<ResponseModelPaients> {
   try {
     const { _page, _size = 10 } = params;
-    const queryParams = toQueryString({ _page, _size });
+    const queryParams = toQueryString({
+      _page,
+      _size,
+      _sort: "admission_dt",
+      _order: "desc",
+    });
 
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const response = await api.get<ResponseModelPaients>(
-      `/patients?${queryParams}`
+      `/patients?status=SCREENED,OBSERVING&_page=1&_limit=10&_sort=admission_dt&_order=desc`
     );
+
+    if (params.statuses) {
+      const filteredData = response.data.filter((patient) =>
+        params.statuses.includes(patient.status)
+      );
+
+      return {
+        ...response,
+        data: filteredData,
+      };
+    }
 
     return response;
   } catch (error: any) {
