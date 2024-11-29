@@ -27,3 +27,9 @@ export enum Status {
 }
 
 export type TLab = "DBP" | "PR" | "RR" | "BT" | "SBP";
+
+export type FetchError = {
+  type: "http" | "network";
+  status?: number;
+  message: string;
+};
