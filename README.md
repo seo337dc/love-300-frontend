@@ -6,6 +6,9 @@ https://aitrics.notion.site/Frontend-latest-74bac2856f5e459da0ac1fce942d38a3?pvs
 
 ## 과제 설명
 
+0. patient-db.json이 데이터베이스 역할을 함
+   서버 실행 : json-server --watch patient-db.json --port 4000
+
 1. 아이콘 이미지 svg 파일을 적용하기 위해서 @svgr/webpack을 설치하여 next config를 세팅하였습니다.
 <!-- 이곳에 과제 설명을 작성해주세요 ! -->
 
