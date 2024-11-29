@@ -1,5 +1,7 @@
 "use client";
 
+import moment from "moment";
+
 import Label from "./Label";
 import IconCopy from "@/assets/icon/icon-copy.svg";
 
@@ -37,7 +39,7 @@ const Table = ({ list }: TProps) => {
               </td>
               <td className="p-2">
                 <p>{item.location}</p>
-                <p>{item.admission_dt}</p>
+                <p>{moment(item.admission_dt).format("YYYY-MM-DD")}</p>
               </td>
               <td className="p-2">
                 <p>{item.department}</p>

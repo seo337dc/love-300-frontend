@@ -1,4 +1,5 @@
 import type { Status } from "@/types";
+import { statusLabelMap } from "@/util";
 
 type TProps = {
   status: Status;
@@ -11,15 +12,6 @@ const statusClassMap: Record<Status, string> = {
   DONE: "bg-done_bg text-done_text",
   ERROR: "bg-error_bg text-error_text",
   DNR: "bg-dnr_bg text-dnr_text",
-};
-
-// 라벨 value 한글화
-const statusLabelMap: Record<Status, string> = {
-  SCREENED: "신규",
-  OBSERVING: "관찰중",
-  DONE: "완료",
-  ERROR: "오류",
-  DNR: "DNR",
 };
 
 const Label = ({ status }: TProps) => {

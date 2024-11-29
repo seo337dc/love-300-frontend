@@ -19,6 +19,10 @@ export type Alter = {
 };
 
 export type Status = "SCREENED" | "OBSERVING" | "DONE" | "DNR" | "ERROR";
+export type FilterStatus = {
+  selected: boolean;
+  value: Status;
+};
 
 export type TLab = "DBP" | "PR" | "RR" | "BT" | "SBP";
 
