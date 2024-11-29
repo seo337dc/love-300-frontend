@@ -6,6 +6,7 @@ https://aitrics.notion.site/Frontend-latest-74bac2856f5e459da0ac1fce942d38a3?pvs
 
 ## 과제 설명
 
+1. 아이콘 이미지 svg 파일을 적용하기 위해서 @svgr/webpack을 설치하여 next config를 세팅하였습니다.
 <!-- 이곳에 과제 설명을 작성해주세요 ! -->
 
 ## 목록
