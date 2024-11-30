@@ -66,7 +66,6 @@ export const sortPatientData = (
   sortType: string,
   orderType: "up" | "down" | "none"
 ): TPatient[] => {
-  console.log("sortType1", sortType);
   const sortOrder = orderType === "down" ? -1 : 1; // 내림차순: -1, 오름차순: 1
 
   if (sortType === "emr_id") {

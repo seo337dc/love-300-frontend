@@ -23,8 +23,6 @@ const MainView = () => {
 
   const { sortType, orderType } = useSortStore();
 
-  console.log("orderType", orderType, sortType);
-
   const [patients, setPatients] = useState<TPatient[]>([]);
   const [statusList, setStatusList] = useState<FilterStatus[]>(STATUS_LIST);
   const [page, setPage] = useState(1);
@@ -62,22 +60,17 @@ const MainView = () => {
   const fetchInfinityData = async (page: number, statuses: Status[]) => {
     if (isLoading) return;
 
-    console.log("여기???");
-
     try {
       setIsLoading(true);
 
       const res = await getPatients({ _page: page, statuses });
 
       if (!!res) {
-        console.log("여기2???");
         const sortedData = sortPatientData(
           patients.concat(res.data),
           sortType,
           orderType
         );
-
-        console.log("sortedData", sortedData);
 
         setPatients(sortedData);
         setHasMore(!!res.next); // next가 있으면 true, 없으면 false
@@ -158,6 +151,15 @@ const MainView = () => {
       .map((status) => status.value);
     fetchInfinityData(page, filterStatus);
   }, [page]);
+
+  useEffect(() => {
+    console.log("Initial data fetch");
+    const filterStatus = statusList
+      .filter((status) => !!status.selected)
+      .map((status) => status.value);
+
+    fetchInfinityData(1, filterStatus); // 초기 데이터를 가져옴
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col px-24 py-4">

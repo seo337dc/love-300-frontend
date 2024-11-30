@@ -32,7 +32,6 @@ const Table = ({ list, setList }: TProps) => {
       setOrder("down"); // 새 정렬 타입일 경우 기본값 내림차순으로
 
       const sortedData = sortPatientData(list, newSortType, "down");
-      console.log("sortedData1", sortedData);
       setList(sortedData);
     } else {
       // 정렬 방향 토글
