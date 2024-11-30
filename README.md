@@ -16,6 +16,7 @@ https://aitrics.notion.site/Frontend-latest-74bac2856f5e459da0ac1fce942d38a3?pvs
 
 1. 아이콘 이미지 svg 파일을 적용하기 위해서 @svgr/webpack 설치하였습니다.
 2. 무한 스크롤 라이브러리 없이 IntersectionObserver으로 무한스크롤 구현하였습니다.
+3. 제공하신 데이터 구조에서 "alert"와 "screening_data"는 객체 타입으로 되어 있어, json-server로 단순 필드만 정렬이 가능하므로 클라이언트단에서 정렬 기능을 적용하게 되었습니다.
 
 ## 구현 해야할 목록
 
