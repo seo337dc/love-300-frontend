@@ -1,5 +1,5 @@
 import type { ResponseModelAll } from "@/lib/api";
-import type { FilterStatus, Status } from "@/types";
+import type { FilterStatus, Status, TPatient } from "@/types";
 
 export const STATUS_LIST: FilterStatus[] = [
   {
@@ -59,4 +59,38 @@ export const outputStatusCtn = (type: Status, info: ResponseModelAll) => {
     default:
       break;
   }
+};
+
+export const sortPatientData = (
+  resultList: TPatient[],
+  sortType: string,
+  orderType: "up" | "down" | "none"
+): TPatient[] => {
+  console.log("sortType1", sortType);
+  const sortOrder = orderType === "down" ? -1 : 1; // 내림차순: -1, 오름차순: 1
+
+  if (sortType === "emr_id") {
+    return resultList.sort((a, b) => (a.emr_id - b.emr_id) * sortOrder);
+  }
+
+  if (sortType === "alert_date") {
+    return resultList.sort((a, b) => {
+      const dateA = new Date(a.alert.date).getTime();
+      const dateB = new Date(b.alert.date).getTime();
+      return (dateA - dateB) * sortOrder;
+    });
+  }
+
+  if (["SBP", "DBP", "PR", "RR", "BT"].includes(sortType)) {
+    return resultList.sort((a, b) => {
+      const valueA =
+        a.screening_data.find((data) => data.type === sortType)?.value || 0;
+      const valueB =
+        b.screening_data.find((data) => data.type === sortType)?.value || 0;
+      return (valueB - valueA) * sortOrder;
+    });
+  }
+
+  // 기본 정렬
+  return resultList;
 };

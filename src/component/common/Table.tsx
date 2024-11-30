@@ -1,23 +1,50 @@
 "use client";
 
+import { Dispatch, SetStateAction } from "react";
 import moment from "moment";
 
 import Label from "./Label";
 import FilterState from "./FilterState";
-import IconCopy from "@/assets/icon/icon-copy.svg";
-import { DEFAULT_SCREEN_DATA } from "@/util";
 
+import IconCopy from "@/assets/icon/icon-copy.svg";
+import { DEFAULT_SCREEN_DATA, sortPatientData } from "@/util";
+import { useSortStore } from "@/store";
 import type { TPatient } from "@/types";
 
 type TProps = {
   list: TPatient[];
+  setList: Dispatch<SetStateAction<TPatient[]>>;
 };
-const Table = ({ list }: TProps) => {
+const Table = ({ list, setList }: TProps) => {
+  const { sortType, orderType, setSort, setOrder } = useSortStore();
+
   const handleCopy = (emr_id: number) => {
     navigator.clipboard
-      .writeText(emr_id.toString()) // 복사할 데이터 (여기서는 emr_id)
+      .writeText(emr_id.toString())
       .then(() => alert("환자 번호를 복사하였습니다."))
       .catch(() => alert("환자 번호를 복사하지 못하였습니다."));
+  };
+
+  const handleSortChange = (newSortType: string) => {
+    // 정렬 타입 변경
+    if (newSortType !== sortType) {
+      setSort(newSortType);
+      setOrder("down"); // 새 정렬 타입일 경우 기본값 내림차순으로
+
+      const sortedData = sortPatientData(list, newSortType, "down");
+      console.log("sortedData1", sortedData);
+      setList(sortedData);
+    } else {
+      // 정렬 방향 토글
+      setOrder(orderType === "down" ? "up" : "down");
+      const sortedData = sortPatientData(
+        list,
+        newSortType,
+        orderType === "down" ? "up" : "down"
+      );
+
+      setList(sortedData);
+    }
   };
 
   return (
@@ -28,7 +55,11 @@ const Table = ({ list }: TProps) => {
             <th className="p-4 w-14 text-sm text-left">Status</th>
             <th className="p-4 min-w-40 text-left flex items-center justify-between">
               <span>Patient Info</span>
-              <FilterState filterType="none" />
+              <FilterState
+                able={sortType === "emr_id"}
+                filterType={orderType}
+                onClick={() => handleSortChange("emr_id")}
+              />
             </th>
             <th className="p-4 text-sm text-left">Location</th>
             <th className="p-4 text-sm text-left border-r border-neutral3">
@@ -37,36 +68,61 @@ const Table = ({ list }: TProps) => {
             <th className="p-4 text-sm text-left">Screened Type</th>
             <th className="p-4 text-sm text-left border-r border-neutral3 flex items-center justify-between">
               <span>Screened Date</span>
-              <FilterState filterType="none" />
+              <FilterState
+                able={sortType === "alert_date"}
+                filterType={orderType}
+                onClick={() => handleSortChange("alert_date")}
+              />
             </th>
             <th className="p-4 text-sm text-left">
               <div className="flex items-center justify-between">
                 <span>SBP</span>
-                <FilterState filterType="none" />
+                <FilterState
+                  able={sortType === "SBP"}
+                  filterType={orderType}
+                  onClick={() => handleSortChange("SBP")}
+                />
               </div>
             </th>
             <th className="p-4 text-sm text-left">
               <div className="flex items-center justify-between">
                 <span>DBP</span>
-                <FilterState filterType="none" />
+                <FilterState
+                  able={sortType === "DBP"}
+                  filterType={orderType}
+                  onClick={() => handleSortChange("DBP")}
+                />
               </div>
             </th>
             <th className="p-4 text-sm text-left">
               <div className="flex items-center justify-between">
                 <span>PR</span>
-                <FilterState filterType="none" />
+                <FilterState
+                  able={sortType === "PR"}
+                  filterType={orderType}
+                  onClick={() => handleSortChange("PR")}
+                />
               </div>
             </th>
             <th className="p-4 text-sm text-left">
               <div className="flex items-center justify-between">
                 <span>RR</span>
-                <FilterState filterType="none" />
+                <FilterState
+                  able={sortType === "RR"}
+                  filterType={orderType}
+                  onClick={() => handleSortChange("RR")}
+                />
               </div>
             </th>
             <th className="p-4 text-sm text-left">
               <div className="flex items-center justify-between">
                 <span>BT</span>
-                <FilterState filterType="none" />
+
+                <FilterState
+                  able={sortType === "BT"}
+                  filterType={orderType}
+                  onClick={() => handleSortChange("BT")}
+                />
               </div>
             </th>
           </tr>

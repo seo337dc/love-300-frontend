@@ -5,9 +5,15 @@ import { useQuery } from "@tanstack/react-query";
 
 import Table from "@/component/common/Table";
 import Loading from "@/component/common/Loading";
+import { useSortStore } from "@/store";
 
 import { getPatients, getPatientsAll } from "@/lib/api";
-import { outputStatusCtn, statusLabelMap, STATUS_LIST } from "@/util";
+import {
+  outputStatusCtn,
+  sortPatientData,
+  statusLabelMap,
+  STATUS_LIST,
+} from "@/util";
 
 import type { FilterStatus, Status, TPatient } from "@/types";
 
@@ -15,15 +21,17 @@ const MainView = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const observerRef = useRef<HTMLDivElement | null>(null);
 
-  const [patients, setPatients] = useState<TPatient[]>([]);
+  const { sortType, orderType } = useSortStore();
 
+  console.log("orderType", orderType, sortType);
+
+  const [patients, setPatients] = useState<TPatient[]>([]);
   const [statusList, setStatusList] = useState<FilterStatus[]>(STATUS_LIST);
   const [page, setPage] = useState(1);
-
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { data: infoAll, refetch: fetchAll } = useQuery({
+  const { data: infoAll } = useQuery({
     queryKey: ["/getPatientAll"],
     queryFn: getPatientsAll,
     initialData: null,
@@ -54,13 +62,24 @@ const MainView = () => {
   const fetchInfinityData = async (page: number, statuses: Status[]) => {
     if (isLoading) return;
 
+    console.log("여기???");
+
     try {
       setIsLoading(true);
 
       const res = await getPatients({ _page: page, statuses });
 
       if (!!res) {
-        setPatients((prev) => [...prev, ...res.data]);
+        console.log("여기2???");
+        const sortedData = sortPatientData(
+          patients.concat(res.data),
+          sortType,
+          orderType
+        );
+
+        console.log("sortedData", sortedData);
+
+        setPatients(sortedData);
         setHasMore(!!res.next); // next가 있으면 true, 없으면 false
       }
     } catch (error) {
@@ -164,7 +183,7 @@ const MainView = () => {
         className="relative w-full h-[90vh] overflow-y-auto"
       >
         {isLoading && <Loading />}
-        <Table list={patients} />
+        <Table list={patients} setList={setPatients} />
         <div ref={observerRef} className="h-10 bg-gray-200" /> {/* 관찰 대상 */}
       </section>
     </div>
