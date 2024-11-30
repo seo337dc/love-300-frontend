@@ -14,7 +14,11 @@
         "type": "DBP",
         "value": 120.0,
         "date": "12.01 10:30"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10002,
@@ -30,7 +34,11 @@
         "type": "BT",
         "value": 38.5,
         "date": "12.02 11:00"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10003,
@@ -46,7 +54,11 @@
         "type": "SBP",
         "value": 140.0,
         "date": "12.03 12:45"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10004,
@@ -62,7 +74,11 @@
         "type": "DBP",
         "value": 90.0,
         "date": "12.04 13:30"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10005,
@@ -78,7 +94,11 @@
         "type": "BT",
         "value": 36.8,
         "date": "12.05 09:00"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10006,
@@ -94,7 +114,11 @@
         "type": "DBP",
         "value": 100.0,
         "date": "12.06 15:00"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10007,
@@ -110,7 +134,11 @@
         "type": "SBP",
         "value": 150.0,
         "date": "12.07 16:30"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10008,
@@ -126,7 +154,11 @@
         "type": "BT",
         "value": 37.2,
         "date": "12.08 14:15"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10009,
@@ -142,7 +174,11 @@
         "type": "DBP",
         "value": 115.0,
         "date": "12.09 17:20"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10010,
@@ -158,7 +194,11 @@
         "type": "BT",
         "value": 36.5,
         "date": "12.10 18:10"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10011,
@@ -174,7 +214,11 @@
         "type": "SBP",
         "value": 125.0,
         "date": "12.11 09:50"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10012,
@@ -190,7 +234,11 @@
         "type": "DBP",
         "value": 110.0,
         "date": "12.12 11:30"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10013,
@@ -206,7 +254,11 @@
         "type": "BT",
         "value": 37.8,
         "date": "12.13 13:40"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10014,
@@ -222,7 +274,11 @@
         "type": "SBP",
         "value": 140.0,
         "date": "12.14 15:00"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10015,
@@ -238,7 +294,11 @@
         "type": "DBP",
         "value": 95.0,
         "date": "12.15 17:10"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10016,
@@ -254,7 +314,11 @@
         "type": "BT",
         "value": 102.5,
         "date": "10.18 00:11"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10017,
@@ -270,7 +334,11 @@
         "type": "DBP",
         "value": 132.1,
         "date": "10.18 18:07"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10018,
@@ -286,7 +354,11 @@
         "type": "SBP",
         "value": 95.8,
         "date": "10.20 05:49"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10019,
@@ -302,7 +374,11 @@
         "type": "BT",
         "value": 85.2,
         "date": "10.20 14:46"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10020,
@@ -318,7 +394,11 @@
         "type": "DBP",
         "value": 135.1,
         "date": "10.22 06:09"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10021,
@@ -334,7 +414,11 @@
         "type": "BT",
         "value": 141.1,
         "date": "10.22 09:37"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10022,
@@ -350,7 +434,11 @@
         "type": "SBP",
         "value": 91.9,
         "date": "10.24 03:22"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10023,
@@ -366,7 +454,11 @@
         "type": "SBP",
         "value": 124.7,
         "date": "10.24 19:35"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10024,
@@ -382,7 +474,11 @@
         "type": "SBP",
         "value": 145.5,
         "date": "10.26 00:15"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10025,
@@ -398,7 +494,11 @@
         "type": "BT",
         "value": 131.6,
         "date": "10.27 00:59"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10026,
@@ -414,7 +514,11 @@
         "type": "SBP",
         "value": 109.0,
         "date": "10.28 01:42"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10027,
@@ -430,7 +534,11 @@
         "type": "BT",
         "value": 141.1,
         "date": "10.28 15:32"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10028,
@@ -446,7 +554,11 @@
         "type": "SBP",
         "value": 93.4,
         "date": "10.30 05:59"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10029,
@@ -462,7 +574,11 @@
         "type": "SBP",
         "value": 119.4,
         "date": "10.31 00:14"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10030,
@@ -478,7 +594,11 @@
         "type": "DBP",
         "value": 107.2,
         "date": "10.31 13:52"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10031,
@@ -494,7 +614,11 @@
         "type": "BT",
         "value": 136.6,
         "date": "11.01 19:39"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10032,
@@ -510,7 +634,11 @@
         "type": "DBP",
         "value": 134.7,
         "date": "11.02 08:24"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10033,
@@ -526,7 +654,11 @@
         "type": "DBP",
         "value": 135.4,
         "date": "11.03 08:33"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10034,
@@ -542,7 +674,11 @@
         "type": "DBP",
         "value": 102.5,
         "date": "11.05 03:47"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10035,
@@ -558,7 +694,11 @@
         "type": "DBP",
         "value": 147.0,
         "date": "11.06 04:42"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10036,
@@ -574,7 +714,11 @@
         "type": "DBP",
         "value": 143.3,
         "date": "11.06 16:47"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135.456 },
+        { "type": "BT", "value": 36.789 }
+      ]
     },
     {
       "emr_id": 10037,
@@ -590,7 +734,11 @@
         "type": "SBP",
         "value": 144.3,
         "date": "11.07 08:33"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 21 },
+        { "type": "BT", "value": 102.222 }
+      ]
     },
     {
       "emr_id": 10038,
@@ -606,7 +754,11 @@
         "type": "SBP",
         "value": 81.2,
         "date": "11.08 09:07"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 135 },
+        { "type": "BT", "value": 36 }
+      ]
     },
     {
       "emr_id": 10039,
@@ -622,7 +774,11 @@
         "type": "SBP",
         "value": 108.4,
         "date": "11.10 02:04"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 5.456545 },
+        { "type": "BT", "value": 20 }
+      ]
     },
     {
       "emr_id": 10040,
@@ -638,7 +794,11 @@
         "type": "DBP",
         "value": 119.4,
         "date": "11.10 17:13"
-      }
+      },
+      "screening_data": [
+        { "type": "SBP", "value": 5.45 },
+        { "type": "BT", "value": 6.89 }
+      ]
     }
   ]
 }

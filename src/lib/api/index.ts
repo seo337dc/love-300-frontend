@@ -29,7 +29,7 @@ export async function getPatients(
     const queryParams = toQueryString({
       _page,
       _limit,
-      _sort: "admission_dt",
+      _sort: "emr_id",
       _order: "desc",
       status: statuses.join(","),
     });
