@@ -12,15 +12,20 @@ https://aitrics.notion.site/Frontend-latest-74bac2856f5e459da0ac1fce942d38a3?pvs
    - 서버 실행 방법
      - 1. npm run json-server [db 실행 - 한번만 실행]
      - 2. json-server 종료 [node server.js이랑 겹쳐서 잘 못 호출하는 것으로 보임]
-     - 2. node sever.js [서버 실행]
+     - 3. node sever.js [서버 실행]
 
 1. 아이콘 이미지 svg 파일을 적용하기 위해서 @svgr/webpack 설치하였습니다.
 2. 무한 스크롤 라이브러리 없이 IntersectionObserver으로 무한스크롤 구현하였습니다.
 
 ## 구현 해야할 목록
 
-- 스타일컴포넌트로 로딩 컴포넌트 돌리기
+- 다시 실행 테스트 ㄹ해볼것
+- 스타일컴포넌트로 로딩 컴포넌트 돌리기 : 애니메이션 적용(나중에)
 - zustand로 loading 상태 관리하기
+- 체크박스 클릭 후, 해당 데이터들이 무한스크롤이 동작 안됨
+- 아이콘 이미지 적용
+- 필터링 적용 > 요청사항에 맞게 (노션 다시 확인)
+- 데이터 다시 > 요청 사항 디자인 적용
 
 ## 목록
 

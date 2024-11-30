@@ -19,10 +19,14 @@ const config: Config = {
       white: "#FFFF",
       grey100: "#505462",
       grey200: "#1B1C1F",
+      gray300: "#ececec",
+      gray400: "#9CA3AF",
+      gray500: "#F7F6F3",
       grey12: "#111214",
       black: "#000000",
 
       blue1: "#E5FAFF",
+      blue2: "#f0f8ff",
 
       screened_bg: "#dfe9ff",
       screened_text: "#0077f0",

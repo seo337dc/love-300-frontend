@@ -24,6 +24,14 @@ export const STATUS_LIST: FilterStatus[] = [
   },
 ];
 
+export const DEFAULT_SCREEN_DATA = {
+  SBP: 0,
+  DBP: 0,
+  PR: 0,
+  RR: 0,
+  BT: 0,
+};
+
 // 라벨 value 한글화
 export const statusLabelMap: Record<Status, string> = {
   SCREENED: "신규",
