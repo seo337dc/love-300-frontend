@@ -9,7 +9,7 @@ export type SortState = {
 };
 
 export const useSortStore = create<SortState>((set) => ({
-  sortType: "emr_id",
+  sortType: "alert_date", // "emr_id",
   orderType: "down", // 기본값: 내림차순
   setSort: (value) => set({ sortType: value }),
   setOrder: (value: "up" | "down" | "none") => set({ orderType: value }),
