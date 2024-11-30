@@ -19,8 +19,8 @@ https://aitrics.notion.site/Frontend-latest-74bac2856f5e459da0ac1fce942d38a3?pvs
 - 프론트 실행
 
 1. `npm install`
-2. `npm run build` (안해도 무방)
-3. `npm run dev` or `npm run start`
+2. `npm run build`
+3. `npm run start`
 
 ## 과제 설명
 

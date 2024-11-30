@@ -91,7 +91,13 @@ const MainView = () => {
       const res = await getPatients({ _page: 1, statuses });
 
       if (!!res) {
-        setPatients(res.data);
+        const sortedData = sortPatientData(
+          patients.concat(res.data),
+          sortType,
+          orderType
+        );
+
+        setPatients(sortedData);
         setHasMore(!!res.next); // next가 있으면 true, 없으면 false
         return true;
       }
