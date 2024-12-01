@@ -154,14 +154,14 @@ const MainView = () => {
     fetchInfinityData(page, filterStatus);
   }, [page]);
 
-  useEffect(() => {
-    console.log("Initial data fetch");
-    const filterStatus = statusList
-      .filter((status) => !!status.selected)
-      .map((status) => status.value);
+  // useEffect(() => {
+  //   console.log("Initial data fetch");
+  //   const filterStatus = statusList
+  //     .filter((status) => !!status.selected)
+  //     .map((status) => status.value);
 
-    fetchInfinityData(1, filterStatus); // 초기 데이터를 가져옴
-  }, []);
+  //   fetchInfinityData(1, filterStatus); // 초기 데이터를 가져옴
+  // }, []);
 
   return (
     <div className="flex min-h-screen flex-col px-24 py-4">
