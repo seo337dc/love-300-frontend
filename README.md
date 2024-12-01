@@ -25,19 +25,16 @@ https://aitrics.notion.site/Frontend-latest-74bac2856f5e459da0ac1fce942d38a3?pvs
 ## 과제 설명
 
 0. patient-db.json이 데이터베이스 역할을 함으로서 json-server로 서버 구성
-
-   - status 다중 필터링을 걸기 위해 server.js를 생성하여 다중 쿼리 실행되도록 적용
-   - 서버 실행 방법
-     - 1. npm run json-server [db 실행 - 한번만 실행]
-     - 2. json-server 종료 [node server.js이랑 겹쳐서 잘 못 호출하는 것으로 보임]
-     - 3. node sever.js [서버 실행]
-
 1. 아이콘 이미지 svg 파일을 적용하기 위해서 @svgr/webpack 설치하였습니다.
 2. 무한 스크롤 라이브러리 없이 IntersectionObserver으로 무한스크롤 구현하였습니다.
 3. 제공하신 데이터 구조에서 "alert"와 "screening_data"는 객체 타입으로 되어 있어, json-server로 단순 필드만 정렬이 가능하므로 클라이언트단에서 정렬 기능을 적용하게 되었습니다.
+4. 현재 로컬 서버로 심플하게 연동이 되기에 서버 통신간의 로딩 처리과정이 거의 없어 임시로 1.5초간 pending처리를 하여 `Loading.tsx`컴포넌트를 적용하였습니다.
 
 ## 이슈 사항
 
+0. 서버 실행 과정
+   - 간혹 `node server.js`가 안되는 경우가 발생합니다. 명확한 원인을 찾지 못했으나,
+     `npm run json-server` 명령어를 실행하고 종료한 뒤 다시 `node server.js`를 실행하면 정상동작이 됩니다.
 1. default 정렬이 screened Date 내림차순으로 정렬이 되어야하는데 초기 api 실행할대 데이터가 명확하게 노출되지 않고 있습니다.
    - 제공해주신 데이터 구조를 통해서 Alter가 객체 형태로 되어 있으며, 현재 구성한 목데이터 DB도 이를 바탕으로 하였습니다.
    - json-server에서는 단순 필드만 조회가 가능하므로 서버단에서 정렬을 못하여 프론트단에서만 정렬 처리를 하고 있습니다.
