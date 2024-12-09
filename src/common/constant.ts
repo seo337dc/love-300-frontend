@@ -9,6 +9,9 @@ export const Colors = {
   Neutral2: "#7E7E7E",
   Neutral3: "#BEBEBE",
   Neutral4: "#EBEBEB",
+  Neutral5: "#505050",
+  Neutral7: "#7E7E7E",
+  NeutralF: "#F0F0F0",
 };
 
 export enum Fonts {
