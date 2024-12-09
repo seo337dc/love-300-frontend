@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Provider } from "jotai";
 import "./globals.css";
 
 import StyledComponentsRegistry from "../lib/StyledComponentsRegistry";
 import GlobalStyleWrapper from "../lib/GlobalStyleWrapper"; // 클라이언트 컴포넌트로 분리
+import QueryProvider from "./queryProvider";
+import Layout from "@/components/common/Layout";
 
 export const metadata = {
   metadataBase: new URL("https://uniqueasset.io"),
@@ -32,11 +33,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Provider>
+        <QueryProvider>
           <StyledComponentsRegistry>
-            <GlobalStyleWrapper>{children}</GlobalStyleWrapper>
+            <GlobalStyleWrapper>
+              <Layout>{children}</Layout>
+            </GlobalStyleWrapper>
           </StyledComponentsRegistry>
-        </Provider>
+        </QueryProvider>
       </body>
     </html>
   );

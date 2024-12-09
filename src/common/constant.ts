@@ -25,5 +25,5 @@ export enum Fonts {
 }
 
 export enum ScreenBoundary {
-  Phone2PC = "1024px",
+  Phone2PC = "375px",
 }
