@@ -27,7 +27,7 @@ const Layout = ({ children }: TProps) => {
 
   return (
     <Wrap>
-      <div>{children}</div>
+      <div className="h-screen">{children}</div>
       <Footer />
     </Wrap>
   );
@@ -38,7 +38,6 @@ export default Layout;
 const Wrap = styled.div`
   width: 100%;
   max-width: ${ScreenBoundary.Phone2PC};
-  margin: 0 auto 100px;
-  padding: 100px 0px;
   min-height: 100vh;
+  margin: 0 auto 100px;
 `;
