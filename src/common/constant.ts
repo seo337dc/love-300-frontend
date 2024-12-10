@@ -11,6 +11,8 @@ export const Colors = {
   Neutral4: "#EBEBEB",
   Neutral5: "#505050",
   Neutral7: "#7E7E7E",
+  NeutralC: "#C1C1C1",
+  NeutralE: "#E0E0E0",
   NeutralF: "#F0F0F0",
 };
 

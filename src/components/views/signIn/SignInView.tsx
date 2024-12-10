@@ -1,6 +1,6 @@
 "use client";
 
-import { styled } from "styled-components";
+import Button from "@/components/ui/Button";
 import ContentSection from "./ContentSection";
 import InputSection from "./InputSection";
 
@@ -15,12 +15,3 @@ const SignInView = () => {
 };
 
 export default SignInView;
-
-const Button = styled.button`
-  width: 100%;
-  height: 50px;
-  gap: 10px;
-  border-radius: 25px;
-  color: #fff;
-  background-color: #000;
-`;
