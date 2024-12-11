@@ -13,8 +13,14 @@ const InputSection = () => {
         button="새 계정 만들기"
         placeholder="아이디 입력"
         onClick={handleMoveSignup}
+        bgColor="netural"
       />
-      <Input type="password" title="Password" placeholder="비밀번호 입력" />
+      <Input
+        type="password"
+        title="Password"
+        placeholder="비밀번호 입력"
+        bgColor="netural"
+      />
 
       <LinkContainer>
         <Link href="">아이디 찾기</Link>

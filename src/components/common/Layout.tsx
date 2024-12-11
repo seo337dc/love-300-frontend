@@ -27,7 +27,7 @@ const Layout = ({ children }: TProps) => {
 
   return (
     <Wrap>
-      <div className="h-screen">{children}</div>
+      <div className="min-h-screen">{children}</div>
       <Footer />
     </Wrap>
   );
@@ -40,4 +40,5 @@ const Wrap = styled.div`
   max-width: ${ScreenBoundary.Phone2PC};
   min-height: 100vh;
   margin: 0 auto 100px;
+  padding: 0 1em;
 `;

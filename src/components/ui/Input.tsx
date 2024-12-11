@@ -7,6 +7,8 @@ type TProps = {
   button?: string;
   onClick?: () => void;
   type?: "text" | "password";
+  bgColor?: "netural" | "white";
+  description?: string;
 };
 
 const Input = ({
@@ -15,6 +17,8 @@ const Input = ({
   button,
   onClick,
   type = "text",
+  bgColor = "white",
+  description,
 }: TProps) => {
   const handleClickBtn = () => {
     if (onClick) onClick();
@@ -29,34 +33,37 @@ const Input = ({
             {button}
           </Text>
         )}
+        {description && <DescText>{description}</DescText>}
       </div>
-      <InputWrapper>
-        <InputContent type={type} placeholder={placeholder} />
+      <div className="w-full relative">
+        <InputContent bgColor={bgColor} type={type} placeholder={placeholder} />
         {type === "password" && (
           <EyeImg
             src={"/images/eye_off.png"}
             alt="toggle password visibility"
           />
         )}
-      </InputWrapper>
+      </div>
     </div>
   );
 };
 
 export default Input;
 
-const InputWrapper = styled.div`
-  position: relative;
-  width: 100%;
-`;
-
-const InputContent = styled.input`
+const InputContent = styled.input<{ bgColor: "netural" | "white" }>`
   width: 100%;
   padding: 11px 40px 11px 12px; /* 아이콘 위치 공간 확보 */
   border-radius: 5px;
-  background-color: ${Colors.NeutralF};
+  background-color: ${({ bgColor }) =>
+    bgColor === "netural" ? Colors.NeutralF : Colors.White};
   color: ${Colors.Neutral5};
   border: 1px solid ${Colors.Neutral3};
+
+  &::placeholder {
+    color: ${Colors.NeutralA}; /* 원하는 색상 코드 */
+    //  font-size: 14px; /* 글꼴 크기도 조정 가능 */
+    //  font-style: italic; /* 기울임꼴 등 다른 스타일도 적용 가능 */
+  }
 `;
 
 const Text = styled.span<{ $isCusor?: boolean }>`
@@ -64,6 +71,12 @@ const Text = styled.span<{ $isCusor?: boolean }>`
   font-weight: 400;
   color: linear-gradient(135deg, #064567 0%, #e71139 100%);
   cursor: ${(props) => props.$isCusor && "pointer"};
+`;
+
+const DescText = styled.span`
+  color: ${Colors.Neutral7};
+  font-size: 12px;
+  font-weight: 300;
 `;
 
 const EyeImg = styled.img`
