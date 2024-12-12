@@ -8,6 +8,9 @@ export const Colors = {
   Red: "#FF0000",
 
   Primary: "#0E4194",
+  Primary1: "#064567",
+  Primary2: "#E71139",
+
   Neutral1: "#5E5E5E",
   Neutral2: "#7E7E7E",
   Neutral3: "#BEBEBE",
@@ -18,6 +21,8 @@ export const Colors = {
   NeutralC: "#C1C1C1",
   NeutralE: "#E0E0E0",
   NeutralF: "#F0F0F0",
+
+  PrimaryGradient: "linear-gradient(90deg, #064567 0%, #E71139 100%)",
 };
 
 export enum Fonts {
