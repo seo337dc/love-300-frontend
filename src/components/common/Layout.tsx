@@ -1,15 +1,20 @@
 "use client";
 
 import { ScreenBoundary } from "@/common/constant";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { styled } from "styled-components";
 import Footer from "./Footer";
+import FooterMenu from "./FooterMenu";
 
 type TProps = {
   children: React.ReactNode;
 };
 
 const Layout = ({ children }: TProps) => {
+  const pathname = usePathname();
+
+  console.log("router", pathname);
   useEffect(() => {
     const inAppRegExp =
       /inapp|KAKAOTALK|NAVER|Line\/|FB_IAB|FB4A|FBAN\/FBIOS|Instagram|DaumDevice\/mobile|SamsungBrowser\/[^1]/i;
@@ -28,7 +33,8 @@ const Layout = ({ children }: TProps) => {
   return (
     <Wrap>
       <div className="min-h-screen">{children}</div>
-      <Footer />
+      {pathname === "/" && <Footer />}
+      {pathname !== "/" && <FooterMenu />}
     </Wrap>
   );
 };
@@ -36,6 +42,7 @@ const Layout = ({ children }: TProps) => {
 export default Layout;
 
 const Wrap = styled.div`
+  position: relative;
   width: 100%;
   max-width: ${ScreenBoundary.Phone2PC};
   min-height: 100vh;
