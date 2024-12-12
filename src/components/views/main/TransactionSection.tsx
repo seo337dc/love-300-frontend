@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 
 import TransactionCard from "./TransactionCard";
 import { TRANSACTION_DATA } from "./constant";
+import { Colors } from "@/common/constant";
 
 import type { TTransaction } from "@/types/transaction";
 
@@ -87,59 +88,18 @@ const InnerWrapper = styled.div`
 `;
 
 const Title = styled.h3`
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
+  font-size: 14px;
+  font-weight: 400;
 `;
 
 const ViewDetails = styled.span`
   font-size: 14px;
-  color: #e71139;
-  cursor: pointer;
+  font-weight: 300;
+  color: ${Colors.Neutral7};
 `;
 
 const Container = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-`;
-
-const TransactionItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 12px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-const TransactionType = styled.span`
-  font-size: 16px;
-  font-weight: 600;
-
-  &.send {
-    color: #e71139;
-  }
-  &.deposit {
-    color: #064567;
-  }
-  &.lock {
-    color: #e71139;
-  }
-  &.stake {
-    color: #064567;
-  }
-`;
-
-const TransactionId = styled.span`
-  font-size: 12px;
-  color: #888;
-  margin-top: 4px;
-`;
-
-const TransactionDate = styled.span`
-  font-size: 12px;
-  color: #aaa;
-  margin-top: 2px;
 `;

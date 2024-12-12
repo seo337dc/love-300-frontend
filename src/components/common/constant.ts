@@ -6,12 +6,12 @@ export interface IMenu extends TImg {
 
 export const MENU_LIST: IMenu[] = [
   {
-    fileName: "menu-home",
+    fileName: "menu-main",
     name: "홈",
-    value: "home",
+    value: "main",
   },
   {
-    fileName: "menu-qr",
+    fileName: "menu-payment",
     name: "결제",
     value: "payment",
   },
