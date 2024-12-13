@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { styled } from "styled-components";
 
-import TransactionCard from "./TransactionCard";
 import { TRANSACTION_DATA } from "./constant";
 import { Colors } from "@/common/constant";
+import TransactionCard from "@/components/ui/TransactionCard";
 
 import type { TTransaction } from "@/types/transaction";
 

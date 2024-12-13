@@ -1,4 +1,5 @@
 import { formatNumber } from "@/common/util";
+import Icon from "./Icon";
 import * as S from "./Input.styles";
 
 type TProps = {
@@ -74,5 +75,14 @@ export const NumberInput = ({ value, handleInput }: TPropsNumberInput) => {
       placeholder="수량입력"
       onChange={(e) => handleAmountChange(e.target.value)}
     />
+  );
+};
+
+export const SearchInput = () => {
+  return (
+    <S.SearchInputWrapper>
+      <Icon fileName="search.png" alt="search icon" />
+      <S.SearchInput />
+    </S.SearchInputWrapper>
   );
 };

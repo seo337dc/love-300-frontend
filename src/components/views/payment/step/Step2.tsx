@@ -1,7 +1,7 @@
+import { useState } from "react";
+
 import Button from "@/components/ui/Button";
 import { NumberInput } from "@/components/ui/Input";
-import { useState } from "react";
-import { styled } from "styled-components";
 
 const Step2 = () => {
   const [amount, setAmount] = useState<string>("");
@@ -18,8 +18,3 @@ const Step2 = () => {
 };
 
 export default Step2;
-
-const Wrap = styled.div`
-  height: 70vh;
-  border: 1px solid black;
-`;
