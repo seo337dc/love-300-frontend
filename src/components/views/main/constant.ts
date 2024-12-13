@@ -1,12 +1,5 @@
 import type { TTransaction } from "@/types/transaction";
 
-export enum RecentTypeLabel {
-  send = "송금",
-  lockup = "락업",
-  stacking = "스테이킹",
-  deposit = "입금",
-}
-
 export const TRANSACTION_DATA: TTransaction[] = [
   {
     id: "d859390524f10a499a7200581cda636e277c3b9e6",

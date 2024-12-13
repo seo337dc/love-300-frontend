@@ -41,3 +41,10 @@ export enum Fonts {
 export enum ScreenBoundary {
   Phone2PC = "375px",
 }
+
+export enum RecentTypeLabel {
+  send = "송금",
+  lockup = "락업",
+  stacking = "스테이킹",
+  deposit = "입금",
+}

@@ -48,3 +48,34 @@ export const NumberInputContainer = styled.input`
     box-shadow: none; /* 포커스 시 그림자 제거 */
   }
 `;
+
+export const SearchInputWrapper = styled.div`
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  padding: 0 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 50px;
+
+  background-color: ${Colors.NeutralF};
+`;
+
+export const SearchInput = styled.input`
+  width: 100%;
+  height: 38px;
+  padding: 10px;
+
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: ${Colors.NeutralF};
+
+  &:focus {
+    background-color: #f1f1f1;
+    border-color: #023319;
+  }
+`;

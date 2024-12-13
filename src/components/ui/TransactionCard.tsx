@@ -1,7 +1,7 @@
 import moment from "moment";
 import { styled } from "styled-components";
-import { Colors } from "@/common/constant";
-import { RecentTypeLabel } from "./constant";
+import { Colors, RecentTypeLabel } from "@/common/constant";
+
 import type { TRecentType, TTransaction } from "@/types/transaction";
 
 type TProps = {
@@ -30,6 +30,10 @@ export default TransactionCard;
 const CardWrap = styled.li`
   display: flex;
   flex-direction: column;
+  gap: 4px;
+  padding: 10px 0;
+
+  border-bottom: 1px solid ${Colors.NeutralE};
   margin-bottom: 12px;
 
   &:last-child {
