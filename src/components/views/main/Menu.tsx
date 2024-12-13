@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { styled } from "styled-components";
 import Icon from "@/components/ui/Icon";
+import { IMenu } from "@/components/common/constant";
 
-type TProps = {
-  fileName: string;
-  name: string;
-};
-const Menu = ({ fileName, name }: TProps) => {
+const Menu = ({ fileName, name, value }: IMenu) => {
   return (
-    <Link className="flex flex-col items-center gap-2" href={""}>
+    <Link className="flex flex-col items-center gap-2" href={`/${value}`}>
       <MenuWrap>
         <Icon fileName={fileName} alt={name} width="40px" height="40px" />
       </MenuWrap>

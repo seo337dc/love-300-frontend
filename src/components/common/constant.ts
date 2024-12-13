@@ -26,3 +26,21 @@ export const MENU_LIST: IMenu[] = [
     value: "user",
   },
 ];
+
+export const MAIN_MENU_LIST: IMenu[] = [
+  {
+    fileName: "menu-staking.png",
+    name: "스테이킹",
+    value: "staking",
+  },
+  {
+    fileName: "menu-dollar.png",
+    name: "송금",
+    value: "send",
+  },
+  {
+    fileName: "menu-lockup.png",
+    name: "락업",
+    value: "lockup",
+  },
+];

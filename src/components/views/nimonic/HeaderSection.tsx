@@ -1,6 +1,3 @@
-import { Colors } from "@/common/constant";
-import { styled } from "styled-components";
-
 const HeaderSection = () => {
   return (
     <section className="text-center">
