@@ -1,0 +1,13 @@
+import LockupCard from "@/components/ui/LockupCard";
+
+const ExpirationSection = () => {
+  return (
+    <div className="flex flex-col gap-4">
+      <LockupCard isDark type="출금하기" />
+      <LockupCard isDark type="출금하기" />
+      <LockupCard isDark type="출금하기" />
+    </div>
+  );
+};
+
+export default ExpirationSection;
