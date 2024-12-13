@@ -11,6 +11,7 @@ type TProps = {
   height?: string;
   bgColor?: string;
   color?: string;
+  borderColor?: string;
 };
 
 const Button = ({
@@ -21,7 +22,9 @@ const Button = ({
   height = "50px",
   bgColor = Colors.Black,
   color = Colors.White,
+  borderColor,
 }: TProps) => {
+  console.log("borderColor", borderColor);
   const handleClick = () => {
     if (!disabled && onClick) {
       onClick();
@@ -36,6 +39,7 @@ const Button = ({
       height={height}
       $bgColor={bgColor}
       color={color}
+      borderColor={borderColor}
     >
       {children}
     </S.ButtonWrap>

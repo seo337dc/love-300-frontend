@@ -23,6 +23,8 @@ export const Colors = {
   NeutralF: "#F0F0F0",
 
   PrimaryGradient: "linear-gradient(90deg, #064567 0%, #E71139 100%)",
+  LineGradient:
+    "linear-gradient(135deg, rgba(6, 69, 103, 0.8) 0%, rgba(231, 17, 57, 0.8) 100%)",
 };
 
 export enum Fonts {
