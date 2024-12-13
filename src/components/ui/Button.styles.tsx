@@ -6,6 +6,7 @@ export const ButtonWrap = styled.button<{
   height: string;
   color: string;
   $bgColor: string;
+  borderColor?: string;
 }>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
@@ -19,7 +20,8 @@ export const ButtonWrap = styled.button<{
   color: ${({ color }) => color};
   background-color: ${(props) =>
     props.disabled ? Colors.NeutralE : props.$bgColor};
-  border: none;
+  border: ${({ borderColor }) =>
+    borderColor ? `1px solid ${borderColor}` : "none"};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 
   font-size: 16px;

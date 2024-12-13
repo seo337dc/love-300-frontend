@@ -1,3 +1,5 @@
+import LockupView from "@/components/views/lockup/LockupView";
+
 export default function LockupPage() {
-  return <div></div>;
+  return <LockupView />;
 }
