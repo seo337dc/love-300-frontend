@@ -6,7 +6,7 @@ type TProps = {
   data: string;
   onClose: () => void;
 };
-const ModalMyInfo = ({ data, onClose }: TProps) => {
+const ModalWallet = ({ data, onClose }: TProps) => {
   return (
     <Modal width="350px" height="80vh" onClose={onClose}>
       <h1 className="font-semibold text-base">My Wallet</h1>
@@ -32,4 +32,4 @@ const ModalMyInfo = ({ data, onClose }: TProps) => {
   );
 };
 
-export default ModalMyInfo;
+export default ModalWallet;

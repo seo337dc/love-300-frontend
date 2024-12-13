@@ -2,7 +2,7 @@ import { useState } from "react";
 import { styled } from "styled-components";
 import { Colors } from "@/common/constant";
 import Icon from "@/components/ui/Icon";
-import ModalMyInfo from "@/components/ui/modal/ModalMyInfo";
+import ModalWallet from "@/components/ui/modal/ModalWallet";
 
 const HeaderSection = () => {
   const id = "d859390524f10a499a7200581cda636e277c3b9e6";
@@ -22,7 +22,7 @@ const HeaderSection = () => {
         <WalletAddressText>{id}</WalletAddressText>
       </div>
 
-      {isOpen && <ModalMyInfo data={id} onClose={handleClose} />}
+      {isOpen && <ModalWallet data={id} onClose={handleClose} />}
     </section>
   );
 };
