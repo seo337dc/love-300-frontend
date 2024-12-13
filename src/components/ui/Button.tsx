@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Colors } from "@/common/constant";
-import { styled } from "styled-components";
+import Icon from "./Icon";
+import * as S from "./Button.styles";
 
 type TProps = {
   onClick?: () => void;
@@ -27,7 +29,7 @@ const Button = ({
   };
 
   return (
-    <ButtonWrap
+    <S.ButtonWrap
       disabled={disabled}
       onClick={handleClick}
       width={width}
@@ -36,35 +38,26 @@ const Button = ({
       color={color}
     >
       {children}
-    </ButtonWrap>
+    </S.ButtonWrap>
   );
 };
 
 export default Button;
 
-const ButtonWrap = styled.button<{
-  width: string;
-  height: string;
-  color: string;
-  $bgColor: string;
-}>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  border-radius: 25px;
-  color: ${({ color }) => color};
-  background-color: ${(props) =>
-    props.disabled ? Colors.NeutralE : props.$bgColor};
-  border: none;
-  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-
-  font-size: 16px;
-  font-weight: 400;
-
-  transition: background-color 0.3s;
-`;
+type TPropsLinkBtn = {
+  href: string;
+  text: string;
+};
+export const LinkButton = ({ href, text }: TPropsLinkBtn) => {
+  return (
+    <Link href={href} className="flex items-center px-4 py-6">
+      <S.LinkText>{text}</S.LinkText>
+      <Icon
+        fileName="right-small.png"
+        alt="right icon"
+        width="24px"
+        height="24px"
+      />
+    </Link>
+  );
+};
