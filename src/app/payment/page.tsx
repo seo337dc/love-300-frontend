@@ -1,3 +1,5 @@
+import PaymentView from "@/components/views/payment/PaymentView";
+
 export default function PaymentPage() {
-  return <div></div>;
+  return <PaymentView />;
 }
