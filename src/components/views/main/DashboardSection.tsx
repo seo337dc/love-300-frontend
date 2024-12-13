@@ -1,4 +1,5 @@
 import { Colors } from "@/common/constant";
+import { MAIN_MENU_LIST } from "@/components/common/constant";
 import { styled } from "styled-components";
 import Menu from "./Menu";
 
@@ -18,9 +19,14 @@ const DashboardSection = () => {
       </AmountContainer>
 
       <div className="py-6 flex gap-4">
-        <Menu fileName="menu-staking.png" name="스테이킹" />
-        <Menu fileName="menu-dollar.png" name="송금" />
-        <Menu fileName="menu-lockup.png" name="락업" />
+        {MAIN_MENU_LIST.map((menu) => (
+          <Menu
+            key={menu.value}
+            fileName={menu.fileName}
+            name={menu.name}
+            value={menu.value}
+          />
+        ))}
       </div>
     </section>
   );

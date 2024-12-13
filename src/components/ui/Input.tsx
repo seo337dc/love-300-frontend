@@ -36,7 +36,11 @@ const Input = ({
         {description && <DescText>{description}</DescText>}
       </div>
       <div className="w-full relative">
-        <InputContent bgColor={bgColor} type={type} placeholder={placeholder} />
+        <InputContent
+          $bgColor={bgColor}
+          type={type}
+          placeholder={placeholder}
+        />
         {type === "password" && (
           <EyeImg
             src={"/images/eye_off.png"}
@@ -50,12 +54,12 @@ const Input = ({
 
 export default Input;
 
-const InputContent = styled.input<{ bgColor: "netural" | "white" }>`
+const InputContent = styled.input<{ $bgColor: "netural" | "white" }>`
   width: 100%;
   padding: 11px 40px 11px 12px; /* 아이콘 위치 공간 확보 */
   border-radius: 5px;
-  background-color: ${({ bgColor }) =>
-    bgColor === "netural" ? Colors.NeutralF : Colors.White};
+  background-color: ${({ $bgColor }) =>
+    $bgColor === "netural" ? Colors.NeutralF : Colors.White};
   color: ${Colors.Neutral5};
   border: 1px solid ${Colors.Neutral3};
 

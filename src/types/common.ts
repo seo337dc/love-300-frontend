@@ -3,4 +3,11 @@ export type TImg = {
   name: string;
 };
 
-export type MenuType = "main" | "payment" | "transaction" | "user";
+export type MenuType =
+  | "main"
+  | "payment"
+  | "transaction"
+  | "user"
+  | "staking"
+  | "send"
+  | "lockup";

@@ -32,7 +32,7 @@ const Button = ({
       onClick={handleClick}
       width={width}
       height={height}
-      bgColor={bgColor}
+      $bgColor={bgColor}
       color={color}
     >
       {children}
@@ -46,7 +46,7 @@ const ButtonWrap = styled.button<{
   width: string;
   height: string;
   color: string;
-  bgColor: string;
+  $bgColor: string;
 }>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
@@ -59,7 +59,7 @@ const ButtonWrap = styled.button<{
   border-radius: 25px;
   color: ${({ color }) => color};
   background-color: ${(props) =>
-    props.disabled ? Colors.NeutralE : props.bgColor};
+    props.disabled ? Colors.NeutralE : props.$bgColor};
   border: none;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 

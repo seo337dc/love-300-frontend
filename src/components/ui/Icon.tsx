@@ -8,6 +8,7 @@ type TProps = {
   width?: string;
   height?: string;
   className?: string;
+  onClick?: () => void;
 };
 const Icon = ({
   fileName,
@@ -15,14 +16,20 @@ const Icon = ({
   width = "24px",
   height = "24px",
   className = "",
+  onClick,
 }: TProps) => {
+  const handleClick = () => {
+    if (onClick) onClick();
+  };
+
   return (
     <IconImg
+      className={className} // className 전달
       src={`${IMG_URL}/${fileName}`}
       alt={alt}
       width={width}
       height={height}
-      className={className} // className 전달
+      onClick={handleClick}
     />
   );
 };
