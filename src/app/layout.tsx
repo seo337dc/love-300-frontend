@@ -8,18 +8,21 @@ import QueryProvider from "./queryProvider";
 import Layout from "@/components/common/Layout";
 
 export const metadata = {
-  metadataBase: new URL("https://uniqueasset.io"),
+  metadataBase: new URL("https://main.d3ul6iwjjpj07q.amplifyapp.com/"),
 
-  title: "Unique Assets",
-  description: "RWA Project Evaluation",
+  title: "Love 300",
+  description: "Love 300",
   openGraph: {
-    title: "RWA Project Evaluation",
-    description: "Explore Real World Assets",
-    url: "https://uniqueasset.io",
+    title: "Love 300",
+    description: "Love 300",
+    url: "https://main.d3ul6iwjjpj07q.amplifyapp.com/",
     images: [
       {
-        url: new URL("/blue_2.png", "https://uniqueasset.io").toString(), // 절대 URL로 변경
-        alt: "Unique Asset Logo",
+        url: new URL(
+          "/images/logo.png",
+          "https://main.d3ul6iwjjpj07q.amplifyapp.com/"
+        ).toString(), // 절대 URL로 변경
+        alt: "Love 300",
       },
     ],
   },
