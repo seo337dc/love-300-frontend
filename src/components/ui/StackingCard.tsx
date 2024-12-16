@@ -1,4 +1,5 @@
 import { Colors } from "@/common/constant";
+import { useRouter } from "next/navigation";
 import { styled, css } from "styled-components";
 import Button from "./Button";
 
@@ -8,6 +9,8 @@ type TProps = {
   //   data:
 };
 const StackingCard = ({ isDark = false, type }: TProps) => {
+  const router = useRouter();
+
   return (
     <Wrap isDark={isDark}>
       <Header isDark={isDark}>
@@ -36,6 +39,7 @@ const StackingCard = ({ isDark = false, type }: TProps) => {
           bgColor={Colors.White}
           color={Colors.Black}
           borderColor={!isDark ? Colors.Black : ""}
+          onClick={() => router.push("/staking/1")}
         >
           {type}
         </Button>

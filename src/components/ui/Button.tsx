@@ -24,7 +24,6 @@ const Button = ({
   color = Colors.White,
   borderColor,
 }: TProps) => {
-  console.log("borderColor", borderColor);
   const handleClick = () => {
     if (!disabled && onClick) {
       onClick();
@@ -39,7 +38,7 @@ const Button = ({
       height={height}
       $bgColor={bgColor}
       color={color}
-      borderColor={borderColor}
+      $borderColor={borderColor}
     >
       {children}
     </S.ButtonWrap>
@@ -64,4 +63,12 @@ export const LinkButton = ({ href, text }: TPropsLinkBtn) => {
       />
     </Link>
   );
+};
+
+type TBadgeBtnProps = {
+  href: string;
+  children: React.ReactNode;
+};
+export const BadgeButton = ({ href, children }: TBadgeBtnProps) => {
+  return <S.BadgeBtn href={`${href}`}>{children}</S.BadgeBtn>;
 };

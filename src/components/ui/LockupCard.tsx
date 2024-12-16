@@ -9,8 +9,8 @@ type TProps = {
 };
 const LockupCard = ({ isDark = false, type }: TProps) => {
   return (
-    <Wrap isDark={isDark}>
-      <Header isDark={isDark}>
+    <Wrap $isDark={isDark}>
+      <Header $isDark={isDark}>
         <span className="font-semibold text-base">락업 {`>`}</span>
         <span className="font-light text-sm">신청일: 24. 11. 20</span>
       </Header>
@@ -53,24 +53,24 @@ const LockupCard = ({ isDark = false, type }: TProps) => {
 
 export default LockupCard;
 
-const Wrap = styled.div<{ isDark: boolean }>`
+const Wrap = styled.div<{ $isDark: boolean }>`
   width: 100%;
   min-height: 160px;
 
-  background-color: ${({ isDark }) =>
-    isDark ? Colors.NeutralF : Colors.White};
-  color: ${({ isDark }) => (isDark ? Colors.Black : Colors.Black)};
+  background-color: ${({ $isDark }) =>
+    $isDark ? Colors.NeutralF : Colors.White};
+  color: ${({ $isDark }) => ($isDark ? Colors.Black : Colors.Black)};
   border-radius: 8px;
   box-shadow: 0px 1px 8px 0px #00000026;
-  border: 1px solid ${({ isDark }) => (isDark ? Colors.Black : Colors.Black)};
+  border: 1px solid ${({ $isDark }) => ($isDark ? Colors.Black : Colors.Black)};
 `;
 
-const Header = styled.div<{ isDark: boolean }>`
+const Header = styled.div<{ $isDark: boolean }>`
   width: 100%;
   padding: 9px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid
-    ${({ isDark }) => (isDark ? Colors.Black : Colors.Black)};
+    ${({ $isDark }) => ($isDark ? Colors.Black : Colors.Black)};
 `;

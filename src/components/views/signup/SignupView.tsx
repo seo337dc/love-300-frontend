@@ -13,10 +13,14 @@ import Step3 from "./step/Step3";
 import Step4 from "./step/Step4";
 import CompleteView from "./CompleteView";
 
+import { DEFAULT_SIGNUP, TSignup } from "./constants";
+
 const SignupView = () => {
   const router = useRouter();
-  const [step, setStep] = useState(5);
-  const [isComplete, setIsComplete] = useState(true);
+  const [step, setStep] = useState(1);
+  const [isComplete, setIsComplete] = useState(false);
+
+  const [signupInfo, setSignupInfo] = useState<TSignup>(DEFAULT_SIGNUP);
 
   return (
     <div>

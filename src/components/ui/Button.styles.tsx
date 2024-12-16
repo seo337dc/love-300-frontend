@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
 import { Colors } from "@/common/constant";
+import Link from "next/link";
 
 export const ButtonWrap = styled.button<{
   width: string;
   height: string;
   color: string;
   $bgColor: string;
-  borderColor?: string;
+  $borderColor?: string;
 }>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
@@ -20,8 +21,8 @@ export const ButtonWrap = styled.button<{
   color: ${({ color }) => color};
   background-color: ${(props) =>
     props.disabled ? Colors.NeutralE : props.$bgColor};
-  border: ${({ borderColor }) =>
-    borderColor ? `1px solid ${borderColor}` : "none"};
+  border: ${({ $borderColor }) =>
+    $borderColor ? `1px solid ${$borderColor}` : "none"};
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
 
   font-size: 16px;
@@ -34,4 +35,21 @@ export const LinkText = styled.span`
   color: ${Colors.Neutral5};
   font-weight: 500;
   font-size: 18px;
+`;
+
+export const BadgeBtn = styled(Link)`
+  width: 83px;
+  height: 35px;
+  padding: 3px 15px;
+  border-radius: 25px;
+
+  font-weight: 400;
+  font-size: 16px;
+  color: ${Colors.Neutral5};
+  background: ${Colors.White};
+  box-shadow: 0px 1px 8px 0px #00000026;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

@@ -4,6 +4,8 @@ import { ScreenBoundary } from "@/common/constant";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { styled } from "styled-components";
+import EclipseBackground from "../template/EclipseTemplate";
+import { EXCEPTION_FOOTER_MENU } from "./constant";
 import Footer from "./Footer";
 import FooterMenu from "./FooterMenu";
 
@@ -14,7 +16,6 @@ type TProps = {
 const Layout = ({ children }: TProps) => {
   const pathname = usePathname();
 
-  console.log("router", pathname);
   useEffect(() => {
     const inAppRegExp =
       /inapp|KAKAOTALK|NAVER|Line\/|FB_IAB|FB4A|FBAN\/FBIOS|Instagram|DaumDevice\/mobile|SamsungBrowser\/[^1]/i;
@@ -33,8 +34,8 @@ const Layout = ({ children }: TProps) => {
   return (
     <Wrap>
       <div className="min-h-screen">{children}</div>
-      {pathname === "/" && <Footer />}
-      {pathname !== "/" && <FooterMenu />}
+      {EXCEPTION_FOOTER_MENU.includes(pathname) && <Footer />}
+      {!EXCEPTION_FOOTER_MENU.includes(pathname) && <FooterMenu />}
     </Wrap>
   );
 };
@@ -47,5 +48,4 @@ const Wrap = styled.div`
   max-width: ${ScreenBoundary.Phone2PC};
   min-height: 100vh;
   margin: 0 auto 100px;
-  padding: 0 1em;
 `;
