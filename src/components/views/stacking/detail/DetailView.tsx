@@ -48,7 +48,7 @@ const DetailView = ({ id }: TProps) => {
     <div>
       <Header
         title={`스테이킹 ${id} 신청`}
-        onBack={() => router.push("/main")}
+        onBack={() => router.push("/staking")}
       />
       <InfoSection />
       <InputSection id={id} amount={amount} handleInput={handleInput} />

@@ -1,11 +1,12 @@
 "use client";
 
 import { ScreenBoundary } from "@/common/constant";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+
 import { useEffect } from "react";
 import { styled } from "styled-components";
 import EclipseBackground from "../template/EclipseTemplate";
-import { EXCEPTION_FOOTER_MENU } from "./constant";
+import { EXCEPTION_ECLIPSE, EXCEPTION_FOOTER_MENU } from "./constant";
 import Footer from "./Footer";
 import FooterMenu from "./FooterMenu";
 
@@ -15,6 +16,15 @@ type TProps = {
 
 const Layout = ({ children }: TProps) => {
   const pathname = usePathname();
+
+  // '/staking' 경로를 제외한 '/staking/deposit/숫자'나 '/staking/숫자' 경로를 처리
+  const isStakingPath = pathname.startsWith("/staking");
+  const isStakingDepositOrNumber = /^\/staking(\/deposit\/\d+|\/\d+)$/.test(
+    pathname
+  );
+
+  // /staking 또는 /staking/숫자, /staking/deposit/숫자 에 해당하는 경로에서 isShowEclipse를 설정
+  const isShowEclipse = !(isStakingPath && isStakingDepositOrNumber);
 
   useEffect(() => {
     const inAppRegExp =
@@ -32,11 +42,13 @@ const Layout = ({ children }: TProps) => {
   }, []);
 
   return (
-    <Wrap>
-      <div className="min-h-screen">{children}</div>
-      {EXCEPTION_FOOTER_MENU.includes(pathname) && <Footer />}
-      {!EXCEPTION_FOOTER_MENU.includes(pathname) && <FooterMenu />}
-    </Wrap>
+    <EclipseBackground isShowEclipse={isShowEclipse}>
+      <Wrap>
+        <div className="min-h-screen">{children}</div>
+        {EXCEPTION_FOOTER_MENU.includes(pathname) && <Footer />}
+        {!EXCEPTION_FOOTER_MENU.includes(pathname) && <FooterMenu />}
+      </Wrap>
+    </EclipseBackground>
   );
 };
 

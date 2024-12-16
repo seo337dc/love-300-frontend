@@ -2,13 +2,21 @@ import { styled } from "styled-components";
 
 type TProps = {
   children: React.ReactNode;
+  isShowEclipse?: boolean;
 };
-const EclipseBackground = ({ children }: TProps) => {
+const EclipseBackground = ({ children, isShowEclipse = true }: TProps) => {
   return (
     <Wrapper>
-      <Eclipse1 />
-      <Eclipse2 />
-      <div className="absolute z-10 top-0 left-0 w-full">{children}</div>
+      {isShowEclipse && (
+        <>
+          <Eclipse1 />
+          <Eclipse2 />
+        </>
+      )}
+
+      <div className="absolute z-10 top-0 left-0 w-full overflow-y-auto max-h-full">
+        {children}
+      </div>
     </Wrapper>
   );
 };

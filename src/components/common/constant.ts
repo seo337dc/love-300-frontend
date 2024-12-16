@@ -46,3 +46,5 @@ export const MAIN_MENU_LIST: IMenu[] = [
 ];
 
 export const EXCEPTION_FOOTER_MENU: string[] = ["/", "/sign-up"];
+
+export const EXCEPTION_ECLIPSE: string[] = ["/", "/sign-up"];
