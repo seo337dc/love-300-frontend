@@ -2,7 +2,7 @@ import LockupCard from "@/components/ui/LockupCard";
 
 const LockupSection = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 px-3">
       <LockupCard type="신청하기" />
       <LockupCard type="신청하기" />
       <LockupCard type="신청하기" />
