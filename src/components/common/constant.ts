@@ -44,3 +44,5 @@ export const MAIN_MENU_LIST: IMenu[] = [
     value: "lockup",
   },
 ];
+
+export const EXCEPTION_FOOTER_MENU: string[] = ["/", "/sign-up"];
