@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Colors } from "@/common/constant";
 import Button from "../ui/Button";
-import EclipseBackground from "./EclipseTemplate";
 
 type TProps = {
   actionAfter: () => void;
@@ -74,22 +73,20 @@ const SecondPwdTemplate = ({ actionAfter }: TProps) => {
   }, [password]);
 
   return (
-    <EclipseBackground>
-      <section className="h-[70vh]">
-        <div className="h-[50vh] flex flex-col justify-center items-center">
-          <p className="font-medium text-lg mb-5">2차 비밀번호 입력</p>
-          <div className="flex gap-2">
-            {password.map((digit, index) => (
-              <Dot key={index} $isDigit={!!digit}>
-                {digit && visibleIndex === index ? digit : "•"}
-              </Dot>
-            ))}
-          </div>
+    <section className="h-[70vh]">
+      <div className="h-[50vh] flex flex-col justify-center items-center">
+        <p className="font-medium text-lg mb-5">2차 비밀번호 입력</p>
+        <div className="flex gap-2">
+          {password.map((digit, index) => (
+            <Dot key={index} $isDigit={!!digit}>
+              {digit && visibleIndex === index ? digit : "•"}
+            </Dot>
+          ))}
         </div>
+      </div>
 
-        <Button onClick={actionAfter}>다음</Button>
-      </section>
-    </EclipseBackground>
+      <Button onClick={actionAfter}>다음</Button>
+    </section>
   );
 };
 

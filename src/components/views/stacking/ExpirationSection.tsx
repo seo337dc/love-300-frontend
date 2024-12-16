@@ -1,11 +1,13 @@
-import StackingCard from "@/components/ui/StackingCard";
+import { ExpireCard } from "@/components/ui/StackingCard";
+import { useRouter } from "next/navigation";
 
 const ExpirationSection = () => {
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-4">
-      <StackingCard isDark type="출금하기" />
-      <StackingCard isDark type="출금하기" />
-      <StackingCard isDark type="출금하기" />
+      <ExpireCard onClick={() => router.push("/staking/deposit/1")} />
+      <ExpireCard onClick={() => router.push("/staking/deposit/1")} />
+      <ExpireCard onClick={() => router.push("/staking/deposit/1")} />
     </div>
   );
 };

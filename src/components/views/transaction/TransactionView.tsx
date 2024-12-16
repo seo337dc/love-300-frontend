@@ -11,7 +11,7 @@ const TransactionView = () => {
     <div>
       <Header title="거래 내역" onBack={() => router.push("/main")} />
 
-      <section className="py-4">
+      <section className="p-4">
         <SearchInput />
       </section>
 

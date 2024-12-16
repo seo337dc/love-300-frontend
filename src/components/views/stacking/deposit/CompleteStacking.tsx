@@ -12,7 +12,7 @@ const CompleteStacking = () => {
           height="100px"
         />
         <p className="font-semibold text-xl">100,000코인 스테이킹</p>
-        <p className="font-semibold text-xl">신청이 완료되었습니다!</p>
+        <p className="font-semibold text-xl">출금이 완료되었습니다!</p>
       </div>
       <BadgeButton href="/main">홈으로</BadgeButton>
     </section>

@@ -41,6 +41,8 @@ const Wrapper = styled.section`
 
   overflow-y: scroll; /* Y축 스크롤 활성화 */
 
+  background-color: ${Colors.White};
+
   /* 스크롤바 숨기기 */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE, Edge */

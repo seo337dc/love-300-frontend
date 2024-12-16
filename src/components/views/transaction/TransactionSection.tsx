@@ -6,7 +6,7 @@ import { TRANSACTION_DATA } from "../main/constant";
 const Transaction = () => {
   return (
     <div>
-      <p className="font-light text-sm">2024.11.24</p>
+      <p className="font-light text-sm px-4">2024.11.24</p>
       <Line />
 
       {TRANSACTION_DATA.map((transaction) => (

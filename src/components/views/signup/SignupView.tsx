@@ -27,7 +27,7 @@ const SignupView = () => {
       <Header title="회원가입" onBack={() => router.push("/")} />
       <Line divide={step} />
       {!isComplete && (
-        <div>
+        <div className="px-4">
           <TitleSection />
           {step === 1 && <Step1 />}
           {step === 2 && <Step2 />}

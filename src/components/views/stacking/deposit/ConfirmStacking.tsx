@@ -14,13 +14,13 @@ const ConfirmStacking = ({ onCancel, onConfirm }: TProps) => {
           <AmountText>100,000</AmountText>
           <span className="font-semibold text-xl ml-1">코인</span>
         </div>
-        <p className="font-semibold text-xl">신청할까요?</p>
+        <p className="font-semibold text-xl">스테이킹을 출금할까요?</p>
       </div>
       <div className="flex flex-col gap-4">
         <Button onClick={onCancel} bgColor={Colors.NeutralC}>
           취소하기
         </Button>
-        <Button onClick={onConfirm}>신청하기</Button>
+        <Button onClick={onConfirm}>출금하기</Button>
       </div>
     </div>
   );
