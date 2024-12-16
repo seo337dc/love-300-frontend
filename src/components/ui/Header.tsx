@@ -19,10 +19,10 @@ const Header = ({ onBack, title = "" }: TProps) => {
   };
 
   return (
-    <div className="flex justify-between py-5">
+    <div className="flex justify-between py-5 pl-2">
       <IconImg src="/images/back.png" alt="back arrow" onClick={handleBack} />
       <Text>{title}</Text>
-      <div />
+      <div className="w-4" />
     </div>
   );
 };
