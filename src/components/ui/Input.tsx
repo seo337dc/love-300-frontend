@@ -86,3 +86,20 @@ export const SearchInput = () => {
     </S.SearchInputWrapper>
   );
 };
+
+type TAddressInputProps = {
+  value: string;
+  handleInput: (value: string) => void;
+};
+export const AddressInput = ({ value, handleInput }: TAddressInputProps) => {
+  return (
+    <S.AddressInputWrapper>
+      <S.AddressInput
+        value={value}
+        placeholder="보낼 주소를 입력해주세요."
+        onChange={(e) => handleInput(e.target.value)}
+      />
+      <Icon fileName="menu-payment.png" alt="search icon" />
+    </S.AddressInputWrapper>
+  );
+};
