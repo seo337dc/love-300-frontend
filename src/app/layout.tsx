@@ -19,7 +19,7 @@ export const metadata = {
     images: [
       {
         url: new URL(
-          "/images/logo.png",
+          "/logo.png",
           "https://main.d3ul6iwjjpj07q.amplifyapp.com/"
         ).toString(), // 절대 URL로 변경
         alt: "Love 300",
