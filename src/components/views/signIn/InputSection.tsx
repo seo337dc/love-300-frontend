@@ -1,13 +1,16 @@
 import { Colors } from "@/common/constant";
 import Input from "@/components/ui/Input";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { styled } from "styled-components";
 
 const InputSection = () => {
-  const handleMoveSignup = () => {};
+  const router = useRouter();
+
+  const handleMoveSignup = () => router.push("/sign-up");
 
   return (
-    <section>
+    <section className="mb-4">
       <Input
         title="ID"
         button="새 계정 만들기"
