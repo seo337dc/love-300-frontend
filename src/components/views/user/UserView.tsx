@@ -13,7 +13,7 @@ const UserView = () => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="px-4">
       <Header onBack={() => router.push("/main")} title="내 정보" />
       <Wallet data={id} size={150} />
 
@@ -23,7 +23,7 @@ const UserView = () => {
         <Line />
         <LinkButton href="" text="2차 비밀번호 변경" />
         <Line />
-        <LinkButton href="" text="로그아웃" />
+        <LinkButton href="/" text="로그아웃" />
       </section>
     </div>
   );

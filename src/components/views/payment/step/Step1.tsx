@@ -1,6 +1,9 @@
 import QRCodeReader from "@/components/template/QRCodeReader";
 
-const Step1 = () => {
+type TProps = {
+  onNext: () => void;
+};
+const Step1 = ({ onNext }: TProps) => {
   return (
     <section className="relative h-screen">
       <QRCodeReader
@@ -9,6 +12,7 @@ const Step1 = () => {
           const url = new URL(data);
           const vendorId = url.pathname.split("/").pop(); // 경로의 마지막 값 추출
           console.log("vendorId", vendorId);
+          onNext();
         }}
         onStop={() => {}}
       />

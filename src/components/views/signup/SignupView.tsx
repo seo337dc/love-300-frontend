@@ -22,12 +22,21 @@ const SignupView = () => {
 
   const [signupInfo, setSignupInfo] = useState<TSignup>(DEFAULT_SIGNUP);
 
+  const handleNext = () => {
+    if (step === 1) setStep(2);
+    if (step === 2) setStep(3);
+    if (step === 3) setStep(4);
+    if (step === 4) {
+      setIsComplete(true);
+    }
+  };
+
   return (
     <div>
       <Header title="회원가입" onBack={() => router.push("/")} />
       <Line divide={step} />
       {!isComplete && (
-        <div className="px-4">
+        <div className="px-4 pt-4">
           <TitleSection />
           {step === 1 && <Step1 />}
           {step === 2 && <Step2 />}
@@ -35,7 +44,7 @@ const SignupView = () => {
           {step === 4 && <Step4 />}
 
           <section className="py-3">
-            <Button>다음</Button>
+            <Button onClick={handleNext}>다음</Button>
           </section>
         </div>
       )}
