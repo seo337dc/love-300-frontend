@@ -42,6 +42,7 @@ export const NumberInputContainer = styled.input`
   font-weight: 600;
   border: none;
   outline: none;
+  background-color: transparent;
 
   &:focus {
     border: none; /* 포커스 시 border 제거 */
@@ -76,6 +77,36 @@ export const SearchInput = styled.input`
 
   &:focus {
     background-color: #f1f1f1;
+    border-color: #023319;
+  }
+`;
+
+export const AddressInputWrapper = styled.div`
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  padding: 0 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 5px;
+
+  background-color: ${Colors.White};
+  border: 1px solid ${Colors.Neutral7};
+`;
+
+export const AddressInput = styled.input`
+  width: 90%;
+  height: 38px;
+  padding: 10px;
+
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 50px;
+
+  &:focus {
     border-color: #023319;
   }
 `;
