@@ -11,15 +11,17 @@ import Step5 from "./step/Step5";
 
 const PaymentView = () => {
   const router = useRouter();
-  const [step, setStep] = useState(5);
+  const [step, setStep] = useState(1);
 
   return (
-    <div>
+    <div className="px-4">
       <Header title="QR코드 결제" onBack={() => router.push("/main")} />
-      {step === 1 && <Step1 />}
-      {step === 2 && <Step2 />}
-      {step === 3 && <Step3 />}
-      {step === 4 && <Step4 />}
+      {step === 1 && <Step1 onNext={() => setStep(2)} />}
+      {step === 2 && <Step2 onNext={() => setStep(3)} />}
+      {step === 3 && <Step3 onNext={() => setStep(4)} />}
+      {step === 4 && (
+        <Step4 onNext={() => setStep(5)} onBack={() => setStep(3)} />
+      )}
       {step === 5 && <Step5 />}
     </div>
   );

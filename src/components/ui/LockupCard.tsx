@@ -1,4 +1,5 @@
 import { Colors } from "@/common/constant";
+import { useRouter } from "next/navigation";
 import { styled, css } from "styled-components";
 import Button from "./Button";
 
@@ -8,6 +9,7 @@ type TProps = {
   //   data:
 };
 const LockupCard = ({ isDark = false, type }: TProps) => {
+  const router = useRouter();
   return (
     <Wrap $isDark={isDark}>
       <Header $isDark={isDark}>
@@ -38,11 +40,17 @@ const LockupCard = ({ isDark = false, type }: TProps) => {
             bgColor={isDark ? Colors.White : Colors.Neutral5}
             color={isDark ? Colors.Neutral5 : Colors.White}
             borderColor={isDark ? Colors.Black : ""}
+            onClick={() => router.push("/lockup/deposit/1")}
           >
             출금
           </Button>
 
-          <Button height="40px" bgColor={Colors.Neutral5} color={Colors.White}>
+          <Button
+            height="40px"
+            bgColor={Colors.Neutral5}
+            color={Colors.White}
+            onClick={() => router.push("/lockup/send/1")}
+          >
             송금
           </Button>
         </div>

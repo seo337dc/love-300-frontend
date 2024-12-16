@@ -19,6 +19,7 @@ const DepositView = ({ id }: TProps) => {
   const [isSecondPwd, setIsSecondPwd] = useState(false);
   const [isConfirm, setIsConfirm] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+
   const handleInput = (value: string) => setAmount(value);
 
   if (isSecondPwd)

@@ -1,10 +1,12 @@
+import { useRouter } from "next/navigation";
 import { styled } from "styled-components";
 import { Colors } from "@/common/constant";
 import Button from "@/components/ui/Button";
 
 const CompleteView = () => {
+  const router = useRouter();
   return (
-    <section className="relative h-screen">
+    <section className="relative h-screen p-4">
       <BackgroundImage />
       <Content>
         <h1 className="font-semibold text-3xl mb-4">환영합니다!</h1>
@@ -14,7 +16,7 @@ const CompleteView = () => {
 
       <div className="flex flex-col justify-center items-center gap-4">
         <SubText>첫화면으로 돌아가 로그인을 진행해주세요</SubText>
-        <Button>로그인하러 가기</Button>
+        <Button onClick={() => router.push("/")}>로그인하러 가기</Button>
       </div>
     </section>
   );
