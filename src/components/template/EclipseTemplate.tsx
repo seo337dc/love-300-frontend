@@ -24,6 +24,8 @@ export default EclipseBackground;
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  max-width: 375px;
+  margin: auto 0;
 `;
 
 const BackgroundLayer = styled.div`
