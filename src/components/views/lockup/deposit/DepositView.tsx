@@ -44,10 +44,14 @@ const DepositView = ({ id }: TProps) => {
       {step === 3 && <Step3 onNext={() => setStep(4)} />}
 
       {step === 4 && (
-        <Step4 onNext={() => setStep(5)} onCancel={() => setStep(3)} />
+        <Step4
+          onNext={() => setStep(5)}
+          onCancel={() => setStep(3)}
+          amount={amount}
+        />
       )}
 
-      {step === 5 && <Step5 />}
+      {step === 5 && <Step5 amount={amount} />}
     </div>
   );
 };

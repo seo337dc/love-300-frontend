@@ -39,10 +39,11 @@ const DetailView = ({ id }: TProps) => {
           setIsConfirm(false);
         }}
         onCancel={() => setIsConfirm(false)}
+        amount={amount}
       />
     );
 
-  if (isComplete) return <CompleteStacking />;
+  if (isComplete) return <CompleteStacking amount={amount} />;
 
   return (
     <div>
