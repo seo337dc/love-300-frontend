@@ -1,10 +1,18 @@
-import { Colors } from "@/common/constant";
-import Input from "@/components/ui/Input";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { styled } from "styled-components";
 
-const InputSection = () => {
+import { Colors } from "@/common/constant";
+import Input from "@/components/ui/Input";
+
+import type { TSignIn } from "./SignInView";
+
+type TProps = {
+  info: TSignIn;
+  handleId: (id: string) => void;
+  handlePwd: (password: string) => void;
+};
+const InputSection = ({ info, handleId, handlePwd }: TProps) => {
   const router = useRouter();
 
   const handleMoveSignup = () => router.push("/sign-up");
@@ -12,6 +20,8 @@ const InputSection = () => {
   return (
     <section className="mb-4">
       <Input
+        value={info.id}
+        onChange={handleId}
         title="ID"
         button="새 계정 만들기"
         placeholder="아이디 입력"
@@ -19,6 +29,8 @@ const InputSection = () => {
         bgColor="netural"
       />
       <Input
+        value={info.password}
+        onChange={handlePwd}
         type="password"
         title="Password"
         placeholder="비밀번호 입력"
