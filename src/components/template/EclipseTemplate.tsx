@@ -8,15 +8,13 @@ const EclipseBackground = ({ children, isShowEclipse = true }: TProps) => {
   return (
     <Wrapper>
       {isShowEclipse && (
-        <>
+        <BackgroundLayer>
           <Eclipse1 />
           <Eclipse2 />
-        </>
+        </BackgroundLayer>
       )}
 
-      <div className="absolute z-10 top-0 left-0 w-full overflow-y-auto max-h-full">
-        {children}
-      </div>
+      <ContentLayer>{children}</ContentLayer>
     </Wrapper>
   );
 };
@@ -26,8 +24,22 @@ export default EclipseBackground;
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh; /* 화면 전체 크기 */
-  overflow: hidden; /* 화면을 넘어가는 부분 숨기기 */
+`;
+
+const BackgroundLayer = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 배경 레이어에만 overflow 숨기기 */
+  z-index: 0;
+`;
+
+const ContentLayer = styled.div`
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* 콘텐츠 영역에서는 스크롤 허용 */
 `;
 
 const Eclipse1 = styled.div`

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { styled } from "styled-components";
 import { Colors } from "@/common/constant";
@@ -5,6 +6,11 @@ import Button from "@/components/ui/Button";
 
 const CompleteView = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <section className="relative h-screen p-4">
       <BackgroundImage />
