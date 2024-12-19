@@ -12,6 +12,7 @@ type TProps = {
   bgColor?: string;
   color?: string;
   borderColor?: string;
+  className?: string;
 };
 
 const Button = ({
@@ -23,6 +24,7 @@ const Button = ({
   bgColor = Colors.Black,
   color = Colors.White,
   borderColor,
+  className = "",
 }: TProps) => {
   const handleClick = () => {
     if (!disabled && onClick) {
@@ -32,6 +34,7 @@ const Button = ({
 
   return (
     <S.ButtonWrap
+      className={className}
       disabled={disabled}
       onClick={handleClick}
       width={width}
