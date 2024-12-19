@@ -3,6 +3,7 @@ import Icon from "./Icon";
 import * as S from "./Input.styles";
 
 type TProps = {
+  id?: string;
   title?: string;
   placeholder?: string;
   button?: string;
@@ -10,9 +11,12 @@ type TProps = {
   type?: "text" | "password";
   bgColor?: "netural" | "white";
   description?: string;
+  value?: string;
+  onChange?: (value: string) => void;
 };
 
 const Input = ({
+  id,
   title,
   placeholder = "",
   button,
@@ -20,9 +24,17 @@ const Input = ({
   type = "text",
   bgColor = "white",
   description,
+  value = "",
+  onChange,
 }: TProps) => {
   const handleClickBtn = () => {
     if (onClick) onClick();
+  };
+
+  const handleInput = (inputValue: string) => {
+    if (onChange) {
+      onChange(inputValue);
+    }
   };
 
   return (
@@ -38,9 +50,12 @@ const Input = ({
       </div>
       <div className="w-full relative">
         <S.InputContent
+          id={id}
           $bgColor={bgColor}
           type={type}
           placeholder={placeholder}
+          onChange={(e) => handleInput(e.target.value)}
+          value={value}
         />
         {type === "password" && (
           <S.EyeImg
