@@ -2,9 +2,29 @@ import PhoneInput, { CountryData } from "react-phone-input-2";
 import { styled } from "styled-components";
 import { Colors } from "@/common/constant";
 
+import * as S from "./Input.styles";
+
 import "react-phone-input-2/lib/style.css";
 
-const InputPhone = () => {
+type TProps = {
+  country: CountryData;
+  phone: string;
+  handleCountry: (value: CountryData) => void;
+  handlePhone: (value: string) => void;
+  isError?: boolean;
+};
+const InputPhone = ({
+  country,
+  phone,
+  handleCountry,
+  handlePhone,
+  isError = false,
+}: TProps) => {
+  const handlePhoneChange = (value: string, countryValue: CountryData) => {
+    handlePhone(value);
+    handleCountry(countryValue);
+  };
+
   return (
     <div className="py-3">
       <div className="flex justify-between">
@@ -16,7 +36,18 @@ const InputPhone = () => {
       </div>
 
       <InputWrapper>
-        <InputContent placeholder="Mobile number" />
+        <InputContent
+          country={country.countryCode}
+          value={phone}
+          placeholder="Mobile number"
+          onChange={handlePhoneChange} // 전화번호 및 국가 변경 핸들러
+        />
+
+        {isError && (
+          <S.ErrorText className="ml-[60px]">
+            11자리의 번호로 입력해주세요
+          </S.ErrorText>
+        )}
       </InputWrapper>
     </div>
   );
