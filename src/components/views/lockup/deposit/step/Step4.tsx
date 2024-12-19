@@ -5,13 +5,14 @@ import { styled } from "styled-components";
 type TProps = {
   onNext: () => void;
   onCancel: () => void;
+  amount: string;
 };
-const Step4 = ({ onNext, onCancel }: TProps) => {
+const Step4 = ({ onNext, onCancel, amount }: TProps) => {
   return (
     <section className="h-[70vh] px-4">
       <div className="h-[55vh] flex flex-col justify-center items-center">
         <div>
-          <AmountText>100,000</AmountText>
+          <AmountText>{amount}</AmountText>
         </div>
         <p className="font-semibold text-xl">락업 코인을 출금할까요?</p>
       </div>

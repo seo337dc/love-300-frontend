@@ -7,8 +7,8 @@ const StackingSection = () => {
   return (
     <div className="flex flex-col gap-4">
       <StackingCard onClick={() => router.push("/staking/1")} type="신청하기" />
-      <StackingCard onClick={() => router.push("/staking/1")} type="신청하기" />
-      <StackingCard onClick={() => router.push("/staking/1")} type="신청하기" />
+      <StackingCard onClick={() => router.push("/staking/2")} type="신청하기" />
+      <StackingCard onClick={() => router.push("/staking/3")} type="신청하기" />
     </div>
   );
 };

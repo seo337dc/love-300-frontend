@@ -31,7 +31,7 @@ const CardWrap = styled.li`
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 10px 4px;
+  padding: 10px 1em;
 
   border-bottom: 1px solid ${Colors.NeutralE};
   margin-bottom: 12px;

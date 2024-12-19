@@ -42,10 +42,14 @@ const SendView = () => {
         {step === 3 && <Step3 onNext={() => setStep(4)} />}
 
         {step === 4 && (
-          <Step4 onCancel={() => setStep(3)} onNext={() => setStep(5)} />
+          <Step4
+            onCancel={() => setStep(3)}
+            onNext={() => setStep(5)}
+            amount={amount}
+          />
         )}
 
-        {step === 5 && <Step5 />}
+        {step === 5 && <Step5 amount={amount} />}
       </Wrap>
     </div>
   );

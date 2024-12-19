@@ -35,6 +35,7 @@ const DepositView = ({ id }: TProps) => {
   if (isConfirm)
     return (
       <ConfirmStacking
+        amount={amount}
         onConfirm={() => {
           setIsComplete(true);
           setIsConfirm(false);
@@ -43,7 +44,7 @@ const DepositView = ({ id }: TProps) => {
       />
     );
 
-  if (isComplete) return <CompleteStacking />;
+  if (isComplete) return <CompleteStacking amount={amount} />;
 
   return (
     <div>

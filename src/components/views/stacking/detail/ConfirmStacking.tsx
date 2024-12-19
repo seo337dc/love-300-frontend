@@ -5,18 +5,19 @@ import { Colors } from "@/common/constant";
 type TProps = {
   onCancel: () => void;
   onConfirm: () => void;
+  amount: string;
 };
-const ConfirmStacking = ({ onCancel, onConfirm }: TProps) => {
+const ConfirmStacking = ({ onCancel, onConfirm, amount }: TProps) => {
   return (
     <div className="h-screen">
       <div className="h-[55vh] flex flex-col justify-center items-center">
         <div>
-          <AmountText>100,000</AmountText>
+          <AmountText>{amount}</AmountText>
           <span className="font-semibold text-xl ml-1">코인</span>
         </div>
         <p className="font-semibold text-xl">신청할까요?</p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 px-4">
         <Button onClick={onCancel} bgColor={Colors.NeutralC}>
           취소하기
         </Button>

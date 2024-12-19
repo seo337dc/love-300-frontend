@@ -53,7 +53,7 @@ const Wrap = styled.div<{ isDark: boolean }>`
   width: 100%;
   min-height: 160px;
 
-  background-image: ${({ isDark }) =>
+  background: ${({ isDark }) =>
     isDark ? Colors.PrimaryGradient : Colors.White};
   color: ${({ isDark }) => (isDark ? Colors.White : Colors.Black)};
   border-radius: 8px;

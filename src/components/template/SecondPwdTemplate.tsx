@@ -73,7 +73,7 @@ const SecondPwdTemplate = ({ actionAfter }: TProps) => {
   }, [password]);
 
   return (
-    <section className="h-[70vh]">
+    <section className="h-[70vh] px-4">
       <div className="h-[50vh] flex flex-col justify-center items-center">
         <p className="font-medium text-lg mb-5">2차 비밀번호 입력</p>
         <div className="flex gap-2">
