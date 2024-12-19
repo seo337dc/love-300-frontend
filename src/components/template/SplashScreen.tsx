@@ -12,6 +12,16 @@ const SplashScreen = () => {
 
   return (
     <Wrapper isComplete={isComplete}>
+      {/* 첫 번째 배경 (linear-gradient) */}
+      <BackgroundGradient
+        as={motion.div}
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 2, ease: "easeInOut" }}
+      />
+      {/* 두 번째 배경 (흰색) */}
+      <BackgroundWhite />
+
       <div />
       <div className="relative">
         <motion.div
@@ -50,7 +60,7 @@ const SplashScreen = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
       >
-        <div className="text-xs font-light">
+        <div className="text-xs font-light mb-4">
           © 2024 LOVE300. All Rights Reserved.
         </div>
       </motion.div>
@@ -60,7 +70,36 @@ const SplashScreen = () => {
 
 export default SplashScreen;
 
-const Wrapper = styled.div<{ isComplete: boolean }>`
+const gradientToWhite = `
+  0% {
+    background: linear-gradient(to bottom, #062b44, #e71e39); /* 초기 색상 */
+  }
+  100% {
+    background: white; /* 최종 색상 */
+  }
+`;
+
+const BackgroundGradient = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #062b44, #e71e39);
+  z-index: 0;
+`;
+
+const BackgroundWhite = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: -1;
+`;
+
+const Wrapper = styled(motion.div)<{ isComplete: boolean }>`
+  @keyframes gradientToWhite {
+    ${gradientToWhite}
+  }
+
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -68,9 +107,10 @@ const Wrapper = styled.div<{ isComplete: boolean }>`
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  padding: 10px 0;
-  background: ${({ isComplete }) =>
-    isComplete ? "#fff" : "linear-gradient(to bottom, #062b44, #e71e39)"};
+  /* padding: 10px 0; */
+  animation: ${({ isComplete }) =>
+    isComplete ? "none" : `gradientToWhite 8s ease-in-out forwards`};
+
   z-index: 9999;
 `;
 
