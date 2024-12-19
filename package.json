@@ -21,7 +21,8 @@
     "react-dom": "^18",
     "react-phone-input-2": "^2.15.1",
     "react-webcam": "^7.2.0",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@babel/plugin-transform-private-methods": "^7.25.9",

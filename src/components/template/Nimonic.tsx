@@ -1,21 +1,19 @@
-import { Colors } from "@/common/constant";
 import { styled } from "styled-components";
+import { Colors } from "@/common/constant";
+import useNimonicStore from "@/store/nimonicStore";
 
 const Nimonic = () => {
+  const { nimonic, setNimonic } = useNimonicStore();
+
   return (
     <section className="grid grid-cols-3 gap-4 p-4">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {nimonic.map((value, index) => (
+        <Card
+          key={index}
+          value={value}
+          onChange={(e) => setNimonic(index, e.target.value)}
+        />
+      ))}
     </section>
   );
 };

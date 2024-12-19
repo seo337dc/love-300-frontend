@@ -1,10 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
-import Button from "@/components/ui/Button";
 import Header from "@/components/ui/Header";
 import TitleSection from "./TitleSection";
 import Step1 from "./step/Step1";
@@ -12,15 +11,17 @@ import Step2 from "./step/Step2";
 import Step3 from "./step/Step3";
 import Step4 from "./step/Step4";
 import CompleteView from "./CompleteView";
-
-import { DEFAULT_SIGNUP, TSignup } from "./constants";
+import useSignupStore from "@/store/signupStore";
+import useNimonicStore from "@/store/nimonicStore";
 
 const SignupView = () => {
   const router = useRouter();
-  const [step, setStep] = useState(1);
-  const [isComplete, setIsComplete] = useState(false);
+  const { clear } = useSignupStore();
+  const { clear: clearNimonic } = useNimonicStore();
 
-  const [signupInfo, setSignupInfo] = useState<TSignup>(DEFAULT_SIGNUP);
+  const [step, setStep] = useState(3);
+
+  const [isComplete, setIsComplete] = useState(false);
 
   const handleNext = () => {
     if (step === 1) setStep(2);
@@ -31,21 +32,37 @@ const SignupView = () => {
     }
   };
 
+  const handleBack = () => {
+    if (step === 1 || isComplete) {
+      router.push("/");
+      return;
+    } else {
+      setStep(step - 1);
+    }
+  };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [step]);
+
+  useEffect(() => {
+    return () => {
+      clear();
+      clearNimonic();
+    };
+  }, []);
+
   return (
     <div>
-      <Header title="회원가입" onBack={() => router.push("/")} />
+      <Header title="회원가입" onBack={handleBack} />
       <Line divide={step} />
       {!isComplete && (
         <div className="px-4 pt-4">
-          <TitleSection />
-          {step === 1 && <Step1 />}
-          {step === 2 && <Step2 />}
-          {step === 3 && <Step3 />}
-          {step === 4 && <Step4 />}
-
-          <section className="py-3">
-            <Button onClick={handleNext}>다음</Button>
-          </section>
+          <TitleSection step={step} />
+          {step === 1 && <Step1 handleNext={handleNext} />}
+          {step === 2 && <Step2 handleNext={handleNext} />}
+          {step === 3 && <Step3 handleNext={handleNext} />}
+          {step === 4 && <Step4 handleNext={handleNext} />}
         </div>
       )}
       {isComplete && <CompleteView />}

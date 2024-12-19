@@ -2,8 +2,12 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Colors } from "@/common/constant";
 
-const SecondPwd = () => {
-  const [password, setPassword] = useState<string[]>(["", "", "", ""]);
+type TProps = {
+  secondPwd: string[];
+  handlePwd: (value: string[]) => void;
+};
+const SecondPwd = ({ secondPwd, handlePwd }: TProps) => {
+  const [password, setPassword] = useState<string[]>(secondPwd);
   const [visibleIndex, setVisibleIndex] = useState<number | null>(null);
 
   // 키보드 이벤트 처리
@@ -22,6 +26,7 @@ const SecondPwd = () => {
         newPassword[i] = key.toString();
         setPassword(newPassword);
         setVisibleIndex(i); // 해당 자리의 숫자가 보이도록 설정
+        handlePwd(newPassword);
         break;
       }
     }
@@ -34,6 +39,7 @@ const SecondPwd = () => {
         newPassword[i] = "";
         setPassword(newPassword);
         setVisibleIndex(null); // 마지막 값을 삭제하고 닷으로 변경
+        handlePwd(newPassword);
         break;
       }
     }

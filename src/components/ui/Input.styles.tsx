@@ -1,14 +1,18 @@
 import { Colors } from "@/common/constant";
 import { styled } from "styled-components";
 
-export const InputContent = styled.input<{ $bgColor: "netural" | "white" }>`
+export const InputContent = styled.input<{
+  $bgColor: "netural" | "white";
+  $isError?: boolean;
+}>`
   width: 100%;
   padding: 11px 40px 11px 12px; /* 아이콘 위치 공간 확보 */
   border-radius: 5px;
   background-color: ${({ $bgColor }) =>
     $bgColor === "netural" ? Colors.NeutralF : Colors.White};
   color: ${Colors.Neutral5};
-  border: 1px solid ${Colors.Neutral3};
+  border: 1px solid
+    ${({ $isError }) => ($isError ? Colors.Error : Colors.Neutral3)};
 
   &::placeholder {
     color: ${Colors.NeutralA}; /* 원하는 색상 코드 */
@@ -109,4 +113,11 @@ export const AddressInput = styled.input`
   &:focus {
     border-color: #023319;
   }
+`;
+
+export const ErrorText = styled.p`
+  padding: 4px 0;
+  font-size: 12px;
+  font-weight: 300;
+  color: ${Colors.Error};
 `;

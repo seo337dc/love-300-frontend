@@ -13,6 +13,9 @@ type TProps = {
   description?: string;
   value?: string;
   onChange?: (value: string) => void;
+  isError?: boolean;
+  errorMsg?: string;
+  className?: string;
 };
 
 const Input = ({
@@ -26,6 +29,9 @@ const Input = ({
   description,
   value = "",
   onChange,
+  isError = false,
+  errorMsg = "",
+  className = "",
 }: TProps) => {
   const handleClickBtn = () => {
     if (onClick) onClick();
@@ -48,14 +54,15 @@ const Input = ({
         )}
         {description && <S.DescText>{description}</S.DescText>}
       </div>
-      <div className="w-full relative">
+      <div className={`w-full relative ${className}`}>
         <S.InputContent
           id={id}
           $bgColor={bgColor}
           type={type}
           placeholder={placeholder}
           onChange={(e) => handleInput(e.target.value)}
-          value={value}
+          value={value || ""}
+          $isError={isError}
         />
         {type === "password" && (
           <S.EyeImg
@@ -64,6 +71,7 @@ const Input = ({
           />
         )}
       </div>
+      {isError && !!errorMsg && <S.ErrorText>{errorMsg}</S.ErrorText>}
     </div>
   );
 };

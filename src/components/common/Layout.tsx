@@ -63,4 +63,5 @@ const Wrap = styled.div`
   max-width: ${ScreenBoundary.Phone2PC};
   min-height: 100vh;
   margin: 0 auto 100px;
+  overflow: auto;
 `;

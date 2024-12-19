@@ -6,6 +6,7 @@ export const Colors = {
   White: "#ffffff",
   Blue: "#1F74FF",
   Red: "#FF0000",
+  Error: "#FF0000",
 
   Primary: "#0E4194",
   Primary1: "#064567",
