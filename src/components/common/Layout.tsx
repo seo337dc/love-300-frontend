@@ -53,19 +53,21 @@ const Layout = ({ children }: TProps) => {
   }, []);
 
   return (
-    <EclipseBackground isShowEclipse={isShowEclipse}>
-      <Wrap>
-        {isLoading ? (
-          <SplashScreen />
-        ) : (
-          <>
-            <div className="min-h-screen">{children}</div>
-            {EXCEPTION_FOOTER_MENU.includes(pathname) && <Footer />}
-            {!EXCEPTION_FOOTER_MENU.includes(pathname) && <FooterMenu />}
-          </>
-        )}
-      </Wrap>
-    </EclipseBackground>
+    <div className="w-full flex justify-center">
+      <EclipseBackground isShowEclipse={isShowEclipse}>
+        <Wrap>
+          {isLoading ? (
+            <SplashScreen />
+          ) : (
+            <>
+              <div className="min-h-screen">{children}</div>
+              {EXCEPTION_FOOTER_MENU.includes(pathname) && <Footer />}
+              {!EXCEPTION_FOOTER_MENU.includes(pathname) && <FooterMenu />}
+            </>
+          )}
+        </Wrap>
+      </EclipseBackground>
+    </div>
   );
 };
 

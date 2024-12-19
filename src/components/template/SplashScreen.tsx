@@ -107,6 +107,7 @@ const Wrapper = styled(motion.div)<{ isComplete: boolean }>`
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  left: 0;
   /* padding: 10px 0; */
   animation: ${({ isComplete }) =>
     isComplete ? "none" : `gradientToWhite 8s ease-in-out forwards`};
