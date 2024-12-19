@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
 import EclipseBackground from "../template/EclipseTemplate";
@@ -9,6 +9,7 @@ import { ScreenBoundary } from "@/common/constant";
 import { EXCEPTION_ECLIPSE, EXCEPTION_FOOTER_MENU } from "./constant";
 import Footer from "./Footer";
 import FooterMenu from "./FooterMenu";
+import SplashScreen from "../template/SplashScreen";
 
 type TProps = {
   children: React.ReactNode;
@@ -16,6 +17,8 @@ type TProps = {
 
 const Layout = ({ children }: TProps) => {
   const pathname = usePathname();
+
+  const [isLoading, setIsLoading] = useState(true); // 로딩 상태 관리
 
   // /staking 경로와 그 하위 경로들을 처리
   const isStakingPath = pathname.startsWith("/staking");
@@ -28,6 +31,11 @@ const Layout = ({ children }: TProps) => {
     (isStakingPath && isStakingDepositOrNumber) ||
     EXCEPTION_ECLIPSE.includes(pathname)
   );
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 3500); // 3초 후 로딩 종료
+    return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 정리
+  }, []);
 
   useEffect(() => {
     const inAppRegExp =
@@ -47,9 +55,15 @@ const Layout = ({ children }: TProps) => {
   return (
     <EclipseBackground isShowEclipse={isShowEclipse}>
       <Wrap>
-        <div className="min-h-screen">{children}</div>
-        {EXCEPTION_FOOTER_MENU.includes(pathname) && <Footer />}
-        {!EXCEPTION_FOOTER_MENU.includes(pathname) && <FooterMenu />}
+        {isLoading ? (
+          <SplashScreen />
+        ) : (
+          <>
+            <div className="min-h-screen">{children}</div>
+            {EXCEPTION_FOOTER_MENU.includes(pathname) && <Footer />}
+            {!EXCEPTION_FOOTER_MENU.includes(pathname) && <FooterMenu />}
+          </>
+        )}
       </Wrap>
     </EclipseBackground>
   );
