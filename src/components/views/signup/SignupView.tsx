@@ -19,7 +19,7 @@ const SignupView = () => {
   const { clear } = useSignupStore();
   const { clear: clearNimonic } = useNimonicStore();
 
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
 
   const [isComplete, setIsComplete] = useState(false);
 
