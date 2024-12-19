@@ -6,13 +6,22 @@ import { Colors } from "@/common/constant";
 import Input from "@/components/ui/Input";
 
 import type { TSignIn } from "./SignInView";
+import { useState } from "react";
 
 type TProps = {
   info: TSignIn;
   handleId: (id: string) => void;
   handlePwd: (password: string) => void;
+  idError: boolean;
+  pwdError: boolean;
 };
-const InputSection = ({ info, handleId, handlePwd }: TProps) => {
+const InputSection = ({
+  info,
+  handleId,
+  handlePwd,
+  idError,
+  pwdError,
+}: TProps) => {
   const router = useRouter();
 
   const handleMoveSignup = () => router.push("/sign-up");
@@ -27,6 +36,7 @@ const InputSection = ({ info, handleId, handlePwd }: TProps) => {
         placeholder="아이디 입력"
         onClick={handleMoveSignup}
         bgColor="netural"
+        isError={idError}
       />
       <Input
         value={info.password}
@@ -35,6 +45,7 @@ const InputSection = ({ info, handleId, handlePwd }: TProps) => {
         title="Password"
         placeholder="비밀번호 입력"
         bgColor="netural"
+        isError={pwdError}
       />
 
       <LinkContainer>
