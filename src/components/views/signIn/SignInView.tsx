@@ -33,7 +33,7 @@ const SignInView = () => {
     <main className="h-full flex flex-col justify-between py-[100px] px-4">
       <ContentSection />
       <InputSection info={info} handleId={handleId} handlePwd={handlePwd} />
-      <Button onClick={() => router.push("/main")} disabled={disableMemo}>
+      <Button onClick={() => router.push("/nimonic")} disabled={disableMemo}>
         로그인
       </Button>
     </main>
